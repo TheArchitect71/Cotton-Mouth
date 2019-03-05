@@ -1,0 +1,32 @@
+.jumbotron {
+  background: url('/assets/coverphoto.jpg');
+  padding: 7em;
+}
+.featurette-divider {
+  margin: 5rem 0;
+}
+.marketing .col-lg-4 {
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+.featurette-heading {
+  font-size: 50px;
+}
+.lead {
+  font-size: 1.25rem;
+  font-weight: 300;
+}
+.btn-primary:hover {
+  color: #fff;
+  background-color: #0069d9;
+  border-color: #0062cc;
+}
+.navbar-brand, .nav-link {
+  color: white;
+}
+.navbar-brand:hover, .nav-link:hover {
+  color: gray;
+}
+.fa-angular, .fa-node, .fa-database {
+  font-size: 9em;
+}
