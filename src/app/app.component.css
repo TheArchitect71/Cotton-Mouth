@@ -1,6 +1,3 @@
-main {
-  background-color: #343a40;
-}
 .jumbotron {
   background: url("/assets/development background.jpg");
   background-repeat: no-repeat;
@@ -9,10 +6,10 @@ main {
   width: auto;
 }
 .jumboTitle,
-.jumboDetail,
-.description,
-.title {
+.jumboDetail {
   color: white;
+  font-weight: 500;
+  font-family: Georgia, 'Times New Roman', Times, serif;
 }
 .jumboTitle,
 .jumboDetail {
@@ -36,15 +33,7 @@ main {
 .lead {
   font-size: 1.25rem;
   font-weight: 300;
-  color: #afb5bf;
-}
-.navbar-brand,
-.nav-link {
-  color: white;
-}
-.navbar-brand:hover,
-.nav-link:hover {
-  color: gray;
+  /* color: #afb5bf; */
 }
 .fa-angular,
 .fa-node,
@@ -79,14 +68,14 @@ img {
   max-height: 100%;
 }
 .card {
-  background-color: #343a40;
+  /* background-color: #343a40; */
   border: none;
 }
 .text-express {
   color: #cb4d00;
 }
 h2 {
-  background: -webkit-linear-gradient(#0750c4, #c94c00);
+  background: -webkit-linear-gradient(#c9b328, #c94c00);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -95,4 +84,9 @@ h2 {
 }
 .navbar-toggler-icon {
   color: white;
+}
+.fa-user-shield,
+.fa-download,
+.fa-store-alt {
+  font-size: 5em;
 }
