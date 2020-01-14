@@ -1,23 +1,7 @@
-.jumbotron {
-  background: url("/assets/development background.jpg");
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-  width: auto;
-}
-.jumboTitle,
-.jumboDetail {
-  color: white;
-  font-weight: 500;
-  font-family: Georgia, 'Times New Roman', Times, serif;
-}
-.jumboTitle,
-.jumboDetail {
-  text-shadow: 2px 2px #2e3033;
-}
-.jumboText {
-  width: auto;
-  text-align: center;
+.bg-success {
+  background: -webkit-linear-gradient(-60deg,#c40707, #c94c00);
+  /* -webkit-background-clip: text; */
+  /* -webkit-text-fill-color: transparent; */
 }
 .featurette-divider {
   margin: 5rem 0;
@@ -40,19 +24,14 @@
 .fa-database {
   font-size: 9em;
 }
-.fa-angular {
-  background: -webkit-linear-gradient(#c40707, #c94c00);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
 .fa-node {
   background: -webkit-linear-gradient(#008000, #c94c00);
-  -webkit-background-clip: text;
+  /* -webkit-background-clip: text; */
   -webkit-text-fill-color: transparent;
 }
 .fa-database {
   background: -webkit-linear-gradient(yellow, #c94c00);
-  -webkit-background-clip: text;
+  /* -webkit-background-clip: text; */
   -webkit-text-fill-color: transparent;
 }
 .ipad-container {
@@ -71,22 +50,11 @@ img {
   /* background-color: #343a40; */
   border: none;
 }
-.text-express {
+/* .text-express {
   color: #cb4d00;
-}
-h2 {
-  background: -webkit-linear-gradient(#c9b328, #c94c00);
-  -webkit-background-clip: text;
+} */
+.text-express {
+  background: -webkit-linear-gradient(#c40707, #c94c00);
+  /* -webkit-background-clip: text; */
   -webkit-text-fill-color: transparent;
-}
- h2, h5, p {
-  font-family: 'Zilla Slab', serif;
-}
-.navbar-toggler-icon {
-  color: white;
-}
-.fa-user-shield,
-.fa-download,
-.fa-store-alt {
-  font-size: 5em;
 }
