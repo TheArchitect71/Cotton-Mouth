@@ -1,60 +1,6 @@
-.bg-success {
-  background: -webkit-linear-gradient(-60deg,#c40707, #c94c00);
-  /* -webkit-background-clip: text; */
-  /* -webkit-text-fill-color: transparent; */
+.profile-picture {
+  width: 7rem;
 }
-.featurette-divider {
-  margin: 5rem 0;
-  margin-top: 0;
-}
-.marketing .col-lg-4 {
-  margin-bottom: 1.5rem;
-  text-align: center;
-}
-.featurette-heading {
-  font-size: 50px;
-}
-.lead {
-  font-size: 1.25rem;
-  font-weight: 300;
-  /* color: #afb5bf; */
-}
-.fa-angular,
-.fa-node,
-.fa-database {
-  font-size: 9em;
-}
-.fa-node {
-  background: -webkit-linear-gradient(#008000, #c94c00);
-  /* -webkit-background-clip: text; */
-  -webkit-text-fill-color: transparent;
-}
-.fa-database {
-  background: -webkit-linear-gradient(yellow, #c94c00);
-  /* -webkit-background-clip: text; */
-  -webkit-text-fill-color: transparent;
-}
-.ipad-container {
-  height: auto;
-  width: 20em;
-}
-.phone-container {
-  height: auto;
-  width: 17em;
-}
-img {
-  max-width: 100%;
-  max-height: 100%;
-}
-.card {
-  /* background-color: #343a40; */
-  border: none;
-}
-/* .text-express {
-  color: #cb4d00;
-} */
-.text-express {
-  background: -webkit-linear-gradient(#c40707, #c94c00);
-  /* -webkit-background-clip: text; */
-  -webkit-text-fill-color: transparent;
+.row {
+  margin: auto;
 }

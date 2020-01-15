@@ -15,7 +15,7 @@ const routes: Routes = [
   { path: 'about', component: AboutComponent },
   { path: 'experience', component: ExperienceComponent},
   { path: 'culture', component: CultureComponent},
-  { path: 'favorite', component: FavoritesComponent},
+  { path: 'favorites', component: FavoritesComponent},
   { path: 'photography', component: PhotographyComponent},
   { path: 'projects', component: ProjectsComponent},
   { path: 'technology', component: TechnologyComponent},
