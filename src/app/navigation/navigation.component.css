@@ -1,3 +1,8 @@
 .list-width {
   width: auto;
 }
+.card-title {
+  background: -webkit-linear-gradient(-120deg, #c40707, #c94c00);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
