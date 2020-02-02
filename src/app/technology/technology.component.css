@@ -1,14 +1,17 @@
-/* .text-express {
-  background: -webkit-linear-gradient(#c40707, #c94c00);
+.title-page {
+  background: -webkit-linear-gradient(-120deg, #c40707, #c94c00);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-} */
+}
 .card {
   background-color: #343a40;
 }
 .card-text {
-  color: #6c757d;
-}
-.card-title {
   color: white;
 }
+.card-title {
+  background: -webkit-linear-gradient(-120deg, #00c853, #76ff03);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
