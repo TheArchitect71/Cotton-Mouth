@@ -1,7 +1,21 @@
+.section-title {
+  background: -webkit-linear-gradient(-120deg, #f024bb, #feb666);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
 .card-img-top {
   width:  17.5rem;
   height: 17.5rem;
 }
+.card-title {
+  background: -webkit-linear-gradient(-120deg, #f024bb, #feb666);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
 .card-body {
   width: 17.5rem;
+}
+.btn {
+  background:#0060df;
+  color: white;
 }
