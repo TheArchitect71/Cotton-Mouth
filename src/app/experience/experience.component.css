@@ -1,1 +1,18 @@
-
+.title-page {
+  background: -webkit-linear-gradient(-120deg, #c40707, #c94c00);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.card {
+  background-color: #343a40;
+}
+.card-title {
+  color: white;
+}
+.card-summary {
+  color: white;
+}
+.card-text {
+  color: white;
+}
