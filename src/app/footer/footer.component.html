@@ -1,14 +1,22 @@
-<footer class="container text-center">
-  <div class="p-4">
-    <ol class="list-unstyled row text-center">
-      <li class="col"><a href="https://github.com/TheArchitect71"><i class="fab fa-github"></i></a></li>
-      <li class="col"><a href="https://twitter.com/eflow71"><i class="fab fa-twitter"></i></a></li>
-      <li class="col"><a href="https://www.linkedin.com/in/erick-flores785/"><i class="fab fa-linkedin-in"></i></a></li>
-    </ol>
-  </div>
-  <p class="text-secondary">
-    © 2017-2020 existential thinker
-    <!-- <a href="#">Privacy</a> |
-    <a href="#">Terms</a> -->
-  </p>
+<footer>
+  <mat-grid-list cols="3" rowHeight="2.1rem">
+    <mat-grid-tile>
+      <a href="https://github.com/TheArchitect71"
+        ><i class="fab fa-github"></i
+      ></a>
+    </mat-grid-tile>
+    <mat-grid-tile
+      ><a href="https://twitter.com/eflow71"><i class="fab fa-twitter"></i></a
+    ></mat-grid-tile>
+    <mat-grid-tile
+      ><a href="https://www.linkedin.com/in/erick-flores785/"
+        ><i class="fab fa-linkedin-in"></i></a
+    ></mat-grid-tile>
+    <mat-grid-tile [colspan]="3">
+      <p>
+        © 2017-2020 existential thinker <a href="#">Privacy</a> |
+        <a href="#">Terms</a>
+      </p>
+    </mat-grid-tile>
+  </mat-grid-list>
 </footer>
