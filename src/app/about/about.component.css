@@ -1,10 +1,9 @@
-p {
+.text-color {
   background: -webkit-linear-gradient(120deg, #ffe259, #ffa751);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  font-size: 14pt;
+  text-align: center;
 }
-.container {
-  width: auto;
+mat-card {
+  margin-bottom: 10px;
 }
-
