@@ -1,4 +1,3 @@
-import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
@@ -13,6 +12,8 @@ import { ProjectsComponent } from './projects/projects.component';
 import { FavoritesComponent } from './favorites/favorites.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
+import { AngularMaterialModule } from './angular-material.module';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -26,9 +27,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     FavoritesComponent
   ],
   imports: [
-    BrowserModule,
     AppRoutingModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    AngularMaterialModule
   ],
   providers: [],
   bootstrap: [AppComponent]
