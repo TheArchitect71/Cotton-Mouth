@@ -1,6 +1,25 @@
-.title-page {
+.page-title {
   background: -webkit-linear-gradient(-120deg, #c40707, #c94c00);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  text-align: center;
+}
+.fa-file-code {
+  font-size: 3em;
+  max-height: 40px;
+  color: rgb(8, 185, 8);
+}
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 20px;
+}
+.example-card {
+  max-width: 400px;
+  margin: auto;
+  margin-bottom: 1em;
+}
+section {
+  align-items: center;
 }
