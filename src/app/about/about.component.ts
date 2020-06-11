@@ -15,7 +15,8 @@ export class AboutComponent implements OnInit {
   constructor(private starLinkService: StarLinkService) {}
 
   getDocuments(): void {
-    this.documents = this.starLinkService.getDocuments();
+    this.starLinkService.getDocuments()
+      .subscribe(documents => this.documents = documents);
   }
   ngOnInit() {
     this.getDocuments();
