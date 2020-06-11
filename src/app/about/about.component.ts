@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 
+import { StarLinkService } from '../starlink.service';
+import { Information } from '../information';
+
 @Component({
   selector: 'app-about',
   templateUrl: './about.component.html',
@@ -7,9 +10,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AboutComponent implements OnInit {
 
-  constructor() { }
+  documents: Information[];
 
+  constructor(private starLinkService: StarLinkService) {}
+
+  getDocuments(): void {
+    this.documents = this.starLinkService.getDocuments();
+  }
   ngOnInit() {
+    this.getDocuments();
   }
 
 }
