@@ -1,5 +1,7 @@
 import { Injectable } from '@angular/core';
 
+import { Observable, of } from 'rxjs';
+
 import { Information } from './information';
 import { INFORMATION } from './mock-information';
 
@@ -9,7 +11,7 @@ import { INFORMATION } from './mock-information';
 export class StarLinkService {
 
   constructor() { }
-  getDocuments(): Information[] {
-    return INFORMATION;
+  getDocuments(): Observable<Information[]> {
+    return of(INFORMATION);
   }
 }

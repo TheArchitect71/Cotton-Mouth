@@ -12,6 +12,7 @@ import { ProjectsComponent } from './projects/projects.component';
 import { FavoritesComponent } from './favorites/favorites.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
+import { HttpClientModule }    from '@angular/common/http';
 import { AngularMaterialModule } from './angular-material.module';
 
 @NgModule({
@@ -29,7 +30,8 @@ import { AngularMaterialModule } from './angular-material.module';
   imports: [
     AppRoutingModule,
     BrowserAnimationsModule,
-    AngularMaterialModule
+    AngularMaterialModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
