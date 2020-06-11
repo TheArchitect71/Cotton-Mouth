@@ -1,17 +1,20 @@
-import { Injectable } from '@angular/core';
+import { Injectable } from "@angular/core";
+import { HttpClient, HttpHeaders } from "@angular/common/http";
+import { Observable, of } from "rxjs";
 
-import { Observable, of } from 'rxjs';
-
-import { Information } from './information';
-import { INFORMATION } from './mock-information';
+import { Information } from "./information";
+import { INFORMATION } from "./mock-information";
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: "root",
 })
 export class StarLinkService {
+  private documentsURL = "api/documents"; // URL to web api
 
-  constructor() { }
+  constructor(private http: HttpClient) {}
+
+  /** GET documents from the server */
   getDocuments(): Observable<Information[]> {
-    return of(INFORMATION);
+    return this.http.get<Information[]>(this.documentsURL);
   }
 }
