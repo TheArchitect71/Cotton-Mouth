@@ -1,17 +1,31 @@
 .title-page {
   background: -webkit-linear-gradient(-120deg, #c40707, #c94c00);
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
 }
-.card {
-  background-color: #343a40;
+mat-card {
+  margin-bottom: 1em;
 }
-.card-text {
-  color: white;
-}
-.card-title {
+mat-card-title {
   background: -webkit-linear-gradient(-120deg, #00c853, #76ff03);
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
 }
+.post-image {
+  width: 100%;
+}
 
+.post-image img {
+  width: 100%;
+  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
+}
+@media (min-width: 1000px) {
+  section {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 40%;
+  }
+}
