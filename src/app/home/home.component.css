@@ -1,16 +1,21 @@
-.profile-picture {
-  width: 8rem;
-  height: 10rem;
+section {
+  /* display: flex;
+  justify-content: center; */
 }
-.row {
+.card-image {
+  display: flex;
+  justify-content: center;
+}
+.example-card {
   margin: auto;
+  margin-bottom: 1em;
+  margin-bottom: 1em;
+  margin-right: 2em;
+  margin-left: 2em;
 }
-.card-title {
-  background: -webkit-linear-gradient(-120deg, #c40707, #c94c00);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-.card-text {
-  color: white;
+.mat-card-image:first-child {
+  margin-top: 1em;
+  border-radius: 50%;
+  height: 15em;
+  width: 15em;
 }
