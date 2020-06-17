@@ -4,18 +4,18 @@
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
-.card {
-  background-color: #343a40;
+mat-expansion-panel {
+  margin-left: 1em;
+  margin-right: 1em;
 }
-.card-title {
-  color: white;
+section {
+  margin-bottom: 1em;
 }
-.card-summary {
-  color: white;
-}
-.card-text {
-  color: white;
-}
-.mat-form-field + .mat-form-field {
-  margin-left: 8px;
+@media (min-width: 1000px) {
+  section {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 40%;
+  }
 }
