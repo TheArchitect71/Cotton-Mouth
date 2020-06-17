@@ -1,17 +1,17 @@
-section {
-  /* display: flex;
-  justify-content: center; */
+.container {
+  display: flex;
+  justify-content: center;
 }
 .card-image {
   display: flex;
   justify-content: center;
 }
 .example-card {
-  margin: auto;
   margin-bottom: 1em;
   margin-bottom: 1em;
   margin-right: 2em;
   margin-left: 2em;
+  max-width: max-content;
 }
 .mat-card-image:first-child {
   margin-top: 1em;
@@ -19,3 +19,11 @@ section {
   height: 15em;
   width: 15em;
 }
+/* @media (min-width: 1000px) {
+  section {
+    display: flexbox;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+  }
+} */
