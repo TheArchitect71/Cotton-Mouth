@@ -1,4 +1,5 @@
 import { NgModule } from "@angular/core";
+import { BrowserModule } from "@angular/platform-browser";
 import { HttpClientModule } from "@angular/common/http";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 
@@ -31,10 +32,11 @@ import { InMemoryDataService } from "./in-memory-data.service";
     FavoritesComponent,
   ],
   imports: [
-    AppRoutingModule,
+    BrowserModule,
     BrowserAnimationsModule,
-    AngularMaterialModule,
+    AppRoutingModule,
     HttpClientModule,
+    AngularMaterialModule,
     // The HttpClientInMemoryWebApiModule module intercepts HTTP requests
     // and returns simulated server responses.
     // Remove it when a real server is ready to receive requests.
