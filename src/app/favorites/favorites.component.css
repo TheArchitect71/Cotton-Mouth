@@ -26,3 +26,13 @@
 .mat-card-image {
   height: 32em;
 }
+.intro {
+  display: flex;
+  position: relative;
+  justify-content: center;
+  background: -webkit-linear-gradient(-120deg, #c40707, #bf5700);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-align: center;
+}
