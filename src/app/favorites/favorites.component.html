@@ -1,155 +1,221 @@
-<main>
-  <div class="text-center">
-    <h3 class="section-title">Public Figures</h3>
-  </div>
-  <div class="container d-flex flex-row flex-wrap justify-content-center">
-    <div class="card bg-dark m-3">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/1/1a/Jordan_Peterson_June_2018.jpg" class="card-img-top"
-        alt="...">
-      <div class="card-body text-white">
-        <h5 class="card-title">Dr. Jordan B. Peterson</h5>
-        <p class="card-text">Is a Professor of Psychology at the University of Toronto, a clinical psychologist, a
-          public speaker, and a creator of Self Authoring.</p>
-        <a href="https://en.wikipedia.org/wiki/Jordan_Peterson" type="button" class="btn">Read More</a>
-      </div>
-    </div>
-    <div class="card bg-dark m-3">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/1/1b/Nietzsche187a.jpg" class="card-img-top" alt="...">
-      <div class="card-body text-white">
-        <h5 class="card-title">Friedrich Nietzsche</h5>
-        <p class="card-text">Influential German philosopher is known for his writings on good and evil, the end of
-          religion in modern society and the concept of a "super-man.</p>
-        <a href="https://en.wikipedia.org/wiki/Friedrich_Nietzsche" type="button" class="btn">Read More</a>
-      </div>
-    </div>
-    <div class="card bg-dark m-3">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/0/00/CGJung.jpg" class="card-img-top" alt="...">
-      <div class="card-body text-white">
-        <h5 class="card-title">Carl Jung</h5>
-        <p class="card-text">Was a Swiss psychiatrist and founder of analytical psychology. He is known for his theories
-          of the Collective Unconscious, including the concept of archetypes.</p>
-        <a href="https://en.wikipedia.org/wiki/Carl_Jung" type="button" class="btn">Read More</a>
-      </div>
-    </div>
-  </div>
-
+<section>
   <!-- Books -->
   <div class="text-center">
     <h3 class="section-title">Books</h3>
   </div>
-  <div class="container d-flex flex-row flex-wrap justify-content-center">
-    <div class="card bg-dark m-3">
-      <img src="https://images-na.ssl-images-amazon.com/images/I/51oXKWrcYYL.jpg" class="card-img-top" alt="...">
-      <div class="card-body text-white">
-        <h5 class="card-title">Thinking Fast and Slow</h5>
-        <p class="card-text">Takes us on a groundbreaking tour of the mind and explains the two systems that drive the
-          way we think.</p>
-        <a href="https://www.amazon.com/dp/B00555X8OA/ref=dp-kindle-redirect?_encoding=UTF8&btkr=1" type="button"
-          class="btn">Read More</a>
-      </div>
-    </div>
-    <div class="card bg-dark m-3">
-      <img src="https://images-na.ssl-images-amazon.com/images/I/41LMUsSTaNL._SX331_BO1,204,203,200_.jpg"
-        class="card-img-top" alt="...">
-      <div class="card-body text-white">
-        <h5 class="card-title">The God Delusion</h5>
-        <p class="card-text">Asserts the irrationality of belief in God and the grievous harm religion has inflicted on
-          society.</p>
-        <a href="https://www.amazon.com/dp/B003JTHWJQ/ref=dp-kindle-redirect?_encoding=UTF8&btkr=1" type="button"
-          class="btn">Read More</a>
-      </div>
-    </div>
-    <div class="card bg-dark m-3">
-      <img src="https://prodimage.images-bn.com/pimages/9780312583507_p0_v1_s550x406.jpg" class="card-img-top"
-        alt="...">
-      <div class="card-body text-white">
-        <h5 class="card-title">Ways of the World</h5>
-        <p class="card-text">Focuses on significant historical trends, themes, and developments in world history. </p>
-        <a href="https://www.amazon.com/Ways-World-Sources-AP-Second/dp/0312583508" type="button" class="btn">Read
-          More</a>
-      </div>
-    </div>
+  <div class="card-list">
+    <mat-card class="example-card">
+      <mat-card-header>
+        <mat-card-title>Thinking Fast and Slow</mat-card-title>
+        <mat-card-subtitle>Movie</mat-card-subtitle>
+      </mat-card-header>
+      <img
+        mat-card-image
+        src="https://images-na.ssl-images-amazon.com/images/I/51oXKWrcYYL.jpg"
+        alt="Thinking Fast and Slow"
+      />
+      <mat-card-content>
+        <p>
+          Engaging the reader in a lively conversation about how we think,
+          Kahneman reveals where we can and cannot trust our intuitions and how
+          we can tap into the benefits of slow thinking. He offers practical and
+          enlightening insights into how choices are made in both our business
+          and our personal lives—and how we can use different techniques to
+          guard against the mental glitches that often get us into trouble.
+        </p>
+      </mat-card-content>
+      <mat-chip-list>
+        <mat-chip color="primary" selected>View More</mat-chip>
+      </mat-chip-list>
+    </mat-card>
+    <mat-card class="example-card">
+      <mat-card-header>
+        <mat-card-title>The God Delusion</mat-card-title>
+        <mat-card-subtitle>Book</mat-card-subtitle>
+      </mat-card-header>
+      <img
+        mat-card-image
+        src="https://images-na.ssl-images-amazon.com/images/I/41LMUsSTaNL._SX331_BO1,204,203,200_.jpg"
+        alt="The God Delusion"
+      />
+      <mat-card-content>
+        <p>
+          A compelling case that belief in God is not just wrong but potentially
+          deadly. It also offers exhilarating insight into the advantages of
+          atheism to the individual and society, not the least of which is a
+          clearer, truer appreciation of the universe's wonders than any faith
+          could ever muster.
+        </p>
+      </mat-card-content>
+      <mat-chip-list>
+        <mat-chip color="primary" selected>View More</mat-chip>
+      </mat-chip-list>
+    </mat-card>
+    <mat-card class="example-card">
+      <mat-card-header>
+        <mat-card-title>A Briefer History of Time</mat-card-title>
+        <mat-card-subtitle>Book</mat-card-subtitle>
+      </mat-card-header>
+      <img
+        mat-card-image
+        src="https://i5.walmartimages.com/asr/52c45b07-a3d1-4099-ab45-18e552e8a837_1.109eefa6e534e4c64b2c2a79b8700d4d.jpeg"
+        alt="A Briefer History of Time"
+      />
+      <mat-card-content>
+        <p>
+          Stephen Hawking’s worldwide bestseller A Brief History of Time remains
+          a landmark volume in scientific writing. But for years readers have
+          asked for a more accessible formulation of its key concepts—the nature
+          of space and time, the role of God in creation, and the history and
+          future of the universe.
+        </p>
+      </mat-card-content>
+      <mat-chip-list>
+        <mat-chip color="primary" selected>View More</mat-chip>
+      </mat-chip-list>
+    </mat-card>
   </div>
-
   <!-- Movies -->
   <div class="text-center">
     <h3 class="section-title">Movies</h3>
   </div>
-  <div class="container d-flex flex-row flex-wrap justify-content-center">
-    <div class="card bg-dark m-3">
-      <img src="https://res.cloudinary.com/jerrick/image/upload/fl_progressive,q_auto,w_1024/hztvcwg7zdfdfdojvdgk.jpg"
-        class="card-img-top" alt="...">
-      <div class="card-body text-white">
-        <h5 class="card-title">The Imitation Game</h5>
-        <p class="card-text">Is a 2014 American historical drama film based on the biography of Alan Turing, a British
-          cryptanalyst, who decrypted German intelligence messages for the British government during the Second World
-          War.</p>
-        <a href="https://en.wikipedia.org/wiki/The_Imitation_Game" type="button" class="btn">Read More</a>
-      </div>
-    </div>
-    <div class="card bg-dark m-3">
-      <img src="https://goodmenproject.com/wp-content/uploads/2019/04/nkFTbA1XjKWo9LCTaV1hV2Lsgr1.jpg"
-        class="card-img-top" alt="...">
-      <div class="card-body text-white">
-        <h5 class="card-title">The King's Speech</h5>
-        <p class="card-text">Is a 2010 historical drama film about the future King George VI who, to cope with a
-          stammer, sees Lionel Logue, an Australian speech and language therapist. The new king relies on Logue to help
-          him make his first wartime radio broadcast on Britain's declaration of war on Germany in 1939. </p>
-        <a href="https://en.wikipedia.org/wiki/The_King%27s_Speech" type="button" class="btn">Read More</a>
-      </div>
-    </div>
-    <div class="card bg-dark m-3">
-      <img src="https://upload.wikimedia.org/wikipedia/en/thumb/c/c0/V_for_vendettax.jpg/220px-V_for_vendettax.jpg"
-        class="card-img-top" alt="...">
-      <div class="card-body text-white">
-        <h5 class="card-title">V for Vendetta</h5>
-        <p class="card-text">Is a 2006 dystopian political thriller film based on the 1988 DC/Vertigo Comics limited
-          series. Set in an alternative future where a Nordic supremacist and neo-fascist totalitarian regime has
-          subjugated the United Kingdom</p>
-        <a href="https://en.wikipedia.org/wiki/V_for_Vendetta_(film)" type="button" class="btn">Read More</a>
-      </div>
-    </div>
+  <div class="card-list">
+    <mat-card class="example-card">
+      <mat-card-header>
+        <mat-card-title>The Imitation Game</mat-card-title>
+        <mat-card-subtitle>Movie</mat-card-subtitle>
+      </mat-card-header>
+      <img
+        mat-card-image
+        src="https://res.cloudinary.com/jerrick/image/upload/fl_progressive,q_auto,w_1024/hztvcwg7zdfdfdojvdgk.jpg"
+        alt="The Imitation Game"
+      />
+      <mat-card-content>
+        <p>
+          Is a 2014 American historical drama film based on the biography of
+          Alan Turing, a British cryptanalyst, who decrypted German intelligence
+          messages for the British government during the Second World War.
+        </p>
+      </mat-card-content>
+      <mat-chip-list>
+        <mat-chip color="primary" selected>View More</mat-chip>
+      </mat-chip-list>
+    </mat-card>
+    <mat-card class="example-card">
+      <mat-card-header>
+        <mat-card-title>The King's Speech</mat-card-title>
+        <mat-card-subtitle>Movie</mat-card-subtitle>
+      </mat-card-header>
+      <img
+        mat-card-image
+        src="https://goodmenproject.com/wp-content/uploads/2019/04/nkFTbA1XjKWo9LCTaV1hV2Lsgr1.jpg"
+        alt="The King's Speech"
+      />
+      <mat-card-content>
+        <p>
+          Is a 2010 historical drama film about the future King George VI who,
+          to cope with a stammer, sees Lionel Logue, an Australian speech and
+          language therapist. The new king relies on Logue to help him make his
+          first wartime radio broadcast on Britain's declaration of war on
+          Germany in 1939.
+        </p>
+      </mat-card-content>
+      <mat-chip-list>
+        <mat-chip color="primary" selected>View More</mat-chip>
+      </mat-chip-list>
+    </mat-card>
+    <mat-card class="example-card">
+      <mat-card-header>
+        <mat-card-title>V for Vendetta</mat-card-title>
+        <mat-card-subtitle>Movie</mat-card-subtitle>
+      </mat-card-header>
+      <img
+        mat-card-image
+        src="https://upload.wikimedia.org/wikipedia/en/thumb/c/c0/V_for_vendettax.jpg/220px-V_for_vendettax.jpg"
+        alt="V for Vendetta"
+      />
+      <mat-card-content>
+        <p>
+          Is a 2006 dystopian political thriller film based on the 1988
+          DC/Vertigo Comics limited series. Set in an alternative future where a
+          Nordic supremacist and neo-fascist totalitarian regime has subjugated
+          the United Kingdom
+        </p>
+      </mat-card-content>
+      <mat-chip-list>
+        <mat-chip color="primary" selected>View More</mat-chip>
+      </mat-chip-list>
+    </mat-card>
   </div>
-
-
   <!-- TV Series -->
   <div class="text-center">
     <h3 class="section-title">TV Series</h3>
   </div>
-  <div class="container d-flex flex-row flex-wrap justify-content-center">
-    <div class="card bg-dark m-3">
+  <div class="card-list">
+    <mat-card class="example-card">
+      <mat-card-header>
+        <mat-card-title>The Patriot Act</mat-card-title>
+        <mat-card-subtitle>TV Show</mat-card-subtitle>
+      </mat-card-header>
       <img
+        mat-card-image
         src="https://m.media-amazon.com/images/M/MV5BZDUzZmIwYzMtMTNiNS00OTRlLTliYTgtZjljNjNjNTdkNDc4XkEyXkFqcGdeQXVyNjAxNDcwNzY@._V1_.jpg"
-        class="card-img-top" alt="...">
-      <div class="card-body text-white">
-        <h5 class="card-title">The Patriot Act with Hasan Minhaj</h5>
-        <p class="card-text">Is an American comedy web television talk show that aims to "explore the modern cultural
-          and political landscape with depth and sincerity." In an attempt to separate the show from similar political
-          satire shows,</p>
-        <a href="https://en.wikipedia.org/wiki/Patriot_Act_with_Hasan_Minhaj" type="button" class="btn">Read More</a>
-      </div>
-    </div>
-    <div class="card bg-dark m-3">
+        alt="Rick and Morty"
+      />
+      <mat-card-content>
+        <p>
+          Is an American comedy web television talk show that aims to "explore
+          the modern cultural and political landscape with depth and sincerity."
+          In an attempt to separate the show from similar political satire
+          shows,
+        </p>
+      </mat-card-content>
+      <mat-chip-list>
+        <mat-chip color="primary" selected>View More</mat-chip>
+      </mat-chip-list>
+    </mat-card>
+    <mat-card class="example-card">
+      <mat-card-header>
+        <mat-card-title>Star Trek: The Next Generation</mat-card-title>
+        <mat-card-subtitle>TV Show</mat-card-subtitle>
+      </mat-card-header>
       <img
+        mat-card-image
         src="https://m.media-amazon.com/images/M/MV5BNDViYjAyZWUtNGQxMy00MDUyLTlkZTAtOWNkY2M5ZTk5MTE5XkEyXkFqcGdeQXVyNTA4NzY1MzY@._V1_.jpg"
-        class="card-img-top" alt="...">
-      <div class="card-body text-white">
-        <h5 class="card-title">Star Trek: The Next Generation</h5>
-        <p class="card-text">Is an American science fiction television series. A new generation of Starfleet officers
-          set off in the U.S.S. Enterprise-D on their own mission to go where no one has gone before.</p>
-        <a href="https://en.wikipedia.org/wiki/Star_Trek:_The_Next_Generation" type="button" class="btn">Read More</a>
-      </div>
-    </div>
-    <div class="card bg-dark m-3">
-      <img src="https://imgc.allpostersimages.com/img/print/u-g-F9DGRL0.jpg?w=550&h=550&p=0" class="card-img-top"
-        alt="...">
-      <div class="card-body text-white">
-        <h5 class="card-title">Rick and Morty</h5>
-        <p class="card-text">Is an American adult animated science fiction sitcom. The series follows the misadventures
-          of cynical mad scientist Rick Sanchez and his good-hearted but fretful grandson Morty Smith, who split their
-          time between domestic life and interdimensional adventures.</p>
-        <a href="https://en.wikipedia.org/wiki/Rick_and_Morty" type="button" class="btn">Read More</a>
-      </div>
-    </div>
+        alt="Rick and Morty"
+      />
+      <mat-card-content>
+        <p>
+          Is an American science fiction television series. A new generation of
+          Starfleet officers set off in the U.S.S. Enterprise-D on their own
+          mission to go where no one has gone before.
+        </p>
+      </mat-card-content>
+      <mat-chip-list>
+        <mat-chip color="primary" selected>View More</mat-chip>
+      </mat-chip-list>
+    </mat-card>
+    <mat-card class="example-card">
+      <mat-card-header>
+        <mat-card-title>Rick and Morty</mat-card-title>
+        <mat-card-subtitle>TV Show</mat-card-subtitle>
+      </mat-card-header>
+      <img
+        mat-card-image
+        src="https://imgc.allpostersimages.com/img/print/u-g-F9DGRL0.jpg?w=550&h=550&p=0"
+        alt="Rick and Morty"
+      />
+      <mat-card-content>
+        <p>
+          Is an American adult animated science fiction sitcom. The series
+          follows the misadventures of cynical mad scientist Rick Sanchez and
+          his good-hearted but fretful grandson Morty Smith, who split their
+          time between domestic life and interdimensional adventures.
+        </p>
+      </mat-card-content>
+      <mat-chip-list>
+        <mat-chip color="primary" selected>View More</mat-chip>
+      </mat-chip-list>
+    </mat-card>
   </div>
-</main>
+</section>

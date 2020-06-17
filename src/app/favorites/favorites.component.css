@@ -1,21 +1,28 @@
 .section-title {
   background: -webkit-linear-gradient(-120deg, #f024bb, #feb666);
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
 }
-.card-img-top {
-  width:  17.5rem;
-  height: 17.5rem;
+.card-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
-.card-title {
-  background: -webkit-linear-gradient(-120deg, #f024bb, #feb666);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+@media (min-width: 1000px) {
+  section {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 90%;
+  }
 }
-.card-body {
-  width: 17.5rem;
+.example-card {
+  max-width: 25em;
+  margin-right: 1em;
+  margin-bottom: 1em;
+  margin-left: 1em;
 }
-.btn {
-  background:#0060df;
-  color: white;
+.mat-card-image {
+  height: 32em;
 }

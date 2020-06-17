@@ -13,13 +13,6 @@ mat-card-title {
   background-clip: text;
   -webkit-text-fill-color: transparent;
 }
-.post-image {
-  width: 100%;
-}
-
-.post-image img {
-  width: 100%;
-}
 @media (min-width: 1000px) {
   section {
     display: block;
