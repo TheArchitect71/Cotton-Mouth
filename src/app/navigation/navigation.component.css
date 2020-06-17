@@ -11,4 +11,11 @@
   height: 15em;
   width: 15em;
 }
-
+@media (min-width: 1000px) {
+  section {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 45%;
+  }
+}
