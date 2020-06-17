@@ -13,6 +13,10 @@ mat-card-title {
   background-clip: text;
   -webkit-text-fill-color: transparent;
 }
+section {
+  margin-left: 1em;
+  margin-right: 1em;
+}
 @media (min-width: 1000px) {
   section {
     display: block;
