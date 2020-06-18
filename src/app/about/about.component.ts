@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
-import { StarLinkService } from '../starlink.service';
+// import { StarLinkService } from '../starlink.service';
 import { Information } from '../information';
 
 @Component({
@@ -8,18 +8,19 @@ import { Information } from '../information';
   templateUrl: './about.component.html',
   styleUrls: ['./about.component.css']
 })
-export class AboutComponent implements OnInit {
+export class AboutComponent {
 
   documents: Information[];
+  constructor() {}
 
-  constructor(private starLinkService: StarLinkService) {}
+  // constructor(private starLinkService: StarLinkService) {}
 
-  getDocuments(): void {
-    this.starLinkService.getDocuments()
-      .subscribe(documents => this.documents = documents);
-  }
-  ngOnInit() {
-    this.getDocuments();
-  }
+  // getDocuments(): void {
+  //   this.starLinkService.getDocuments()
+  //     .subscribe(documents => this.documents = documents);
+  // }
+  // ngOnInit() {
+  //   this.getDocuments();
+  // }
 
 }
