@@ -6,97 +6,18 @@
     </h3>
   </div>
   <mat-accordion>
-    <mat-expansion-panel>
+    <mat-expansion-panel *ngFor="let experiencePoint of experiencePoints">
       <mat-expansion-panel-header>
         <mat-panel-title>
-          Explore varioius cases and scenarios.
+          {{ experiencePoint.title }}
         </mat-panel-title>
       </mat-expansion-panel-header>
       <ul>
         <li>
-          Strong interest and skills in web technologies: HTML, CSS, &
-          JavaScript.
+          {{ experiencePoint.text }}
         </li>
         <li>
-          Experience with modern enterprise design philosophies & patterns.
-        </li>
-      </ul>
-    </mat-expansion-panel>
-    <mat-expansion-panel>
-      <mat-expansion-panel-header>
-        <mat-panel-title>
-          Keeping up with evolving industry.
-        </mat-panel-title>
-      </mat-expansion-panel-header>
-      <ul>
-        <li>
-          Understanding how the web works from a rudimentary level.
-        </li>
-        <li>
-          Ability to match solutions to business needs without unnecessary
-          complexity.
-        </li>
-      </ul>
-    </mat-expansion-panel>
-    <mat-expansion-panel>
-      <mat-expansion-panel-header>
-        <mat-panel-title>
-          Implement for speed and scalability.
-        </mat-panel-title>
-      </mat-expansion-panel-header>
-      <ul>
-        <li>
-          Good understanding of asynchronous request handling.
-        </li>
-        <li>
-          Provide appropriate endpoints on Backend, for Frontend to consume
-        </li>
-      </ul>
-    </mat-expansion-panel>
-    <mat-expansion-panel>
-      <mat-expansion-panel-header>
-        <mat-panel-title>
-          Involved with all aspects of the user.
-        </mat-panel-title>
-      </mat-expansion-panel-header>
-      <ul>
-        <li>
-          Implementing Users, Authentication as well as Authorization
-        </li>
-        <li>
-          Assuring: all user input is validated, experience is intuitive &
-          accessible.
-        </li>
-      </ul>
-    </mat-expansion-panel>
-    <mat-expansion-panel>
-      <mat-expansion-panel-header>
-        <mat-panel-title>
-         Behaved interface across devices.
-        </mat-panel-title>
-      </mat-expansion-panel-header>
-      <ul>
-        <li>
-          Design and develop product assets, features, themes and style guides.
-        </li>
-        <li>
-          Develop applications using frameworks to avoid cross-browser
-          compatibility issues.
-        </li>
-      </ul>
-    </mat-expansion-panel>
-    <mat-expansion-panel>
-      <mat-expansion-panel-header>
-        <mat-panel-title>
-          Collaborate and cultivate.
-        </mat-panel-title>
-      </mat-expansion-panel-header>
-      <ul>
-        <li>
-          Strong communication skills, both written and verbal.
-        </li>
-        <li>
-          Manage project priorities, deadlines and deliverables.
+          {{ experiencePoint.secondaryText}}
         </li>
       </ul>
     </mat-expansion-panel>
