@@ -41,12 +41,12 @@ export class NavigationComponent implements OnInit {
       title: `Favorites`,
       content: `Books, Movies and TV Shows Dealing with the Humanities.`
     },
-    {
-      id: 6,
-      route: '/education',
-      title: `Education`,
-      content: `Facilitating the acquisition of knowledge, skills, values, beliefs, and habits.`
-    }
+    // {
+    //   id: 6,
+    //   route: '/education',
+    //   title: `Education`,
+    //   content: `Facilitating the acquisition of knowledge, skills, values, beliefs, and habits.`
+    // }
   ]
 
   ngOnInit() {
