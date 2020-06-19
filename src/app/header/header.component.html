@@ -1,0 +1,32 @@
+<header>
+  <div class="background-sky hero"></div>
+  <mat-grid-list cols="3" rowHeight="7em">
+    <mat-grid-tile>
+      <button
+        mat-raised-button
+        [routerLink]="['/contact']"
+        routerLinkActive="router-link-active"
+        color="primary"
+      >
+        Contact
+      </button>
+    </mat-grid-tile>
+    <mat-grid-tile
+      ><img
+        src="/assets/existential thinker logo colored shrinked.png"
+        routerLink="/"
+        routerLinkActive="active"
+      />
+    </mat-grid-tile>
+    <mat-grid-tile>
+      <button
+        mat-raised-button
+        [routerLink]="['/log-in']"
+        routerLinkActive="router-link-active"
+        color="primary"
+      >
+        Log In
+      </button>
+    </mat-grid-tile>
+  </mat-grid-list>
+</header>

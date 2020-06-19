@@ -15,7 +15,7 @@ import { AboutComponent } from "./about/about.component";
 import { NavigationComponent } from "./navigation/navigation.component";
 import { FooterComponent } from "./footer/footer.component";
 import { AppRoutingModule } from "./app-routing.module";
-import { HomeComponent } from "./home/home.component";
+import { HeaderComponent } from "./header/header.component";
 import { ProjectsComponent } from "./projects/projects.component";
 import { FavoritesComponent } from "./favorites/favorites.component";
 import { ContactComponent } from './contact/contact.component';
@@ -30,7 +30,7 @@ import { SignupComponent } from './authentication/signup/signup.component';
     AboutComponent,
     NavigationComponent,
     FooterComponent,
-    HomeComponent,
+    HeaderComponent,
     ProjectsComponent,
     FavoritesComponent,
     ContactComponent,
