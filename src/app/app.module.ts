@@ -6,9 +6,6 @@ import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { AppComponent } from "./app.component";
 import { AngularMaterialModule } from "./angular-material.module";
 
-import { HttpClientInMemoryWebApiModule } from "angular-in-memory-web-api";
-import { InMemoryDataService } from "./in-memory-data.service";
-
 import { ExperienceComponent } from "./experience/experience.component";
 import { TechnologyComponent } from "./technology/technology.component";
 import { AboutComponent } from "./about/about.component";
@@ -42,15 +39,7 @@ import { SignupComponent } from './authentication/signup/signup.component';
     BrowserAnimationsModule,
     AppRoutingModule,
     HttpClientModule,
-    AngularMaterialModule,
-    // The HttpClientInMemoryWebApiModule module intercepts HTTP requests
-    // and returns simulated server responses.
-    // Remove it when a real server is ready to receive requests.
-    HttpClientInMemoryWebApiModule.forRoot(InMemoryDataService, {
-      dataEncapsulation: false,
-      delay: 300,
-      passThruUnknownUrl: true,
-    }),
+    AngularMaterialModule
   ],
   providers: [],
   bootstrap: [AppComponent],
