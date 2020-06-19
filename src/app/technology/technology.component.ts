@@ -12,6 +12,7 @@ export class TechnologyComponent implements OnInit {
     {
       id: 1,
       image: `/assets/pwa-reliable.png`,
+      alt: 'progressive web application',
       title: `In the Past...`,
       text: `When browsers were much less capable than today, and JavaScript
       performance was poor, every page was coming from a server. Every time
@@ -25,6 +26,7 @@ export class TechnologyComponent implements OnInit {
     {
       id: 2,
       image: `/assets/pwa-fast.png`,
+      alt: 'progressive web application',
       title: `Security`,
       text: `When based software need updating, every single device in which the
       application is installed will need individually updating. Compare this
@@ -39,6 +41,7 @@ export class TechnologyComponent implements OnInit {
     {
       id: 3,
       image: `/assets/pwa-engaging.png`,
+      alt: 'progressive web application',
       title: `Customization`,
       text: `As a custom web application is made specifically to your business needs,
       it’s completely flexible and scalable to your business’s demands and

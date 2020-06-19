@@ -7,7 +7,7 @@
   </div>
   <mat-card *ngFor="let item of technologyList" class="example-card">
     <mat-card-content>
-      <img mat-card-image src="{{ item.image }}" alt="... " />
+      <img mat-card-image src="{{ item.image }}" alt="{{ item.alt }} " />
       <mat-card-title>{{ item.title }}</mat-card-title>
       <p>
         {{ item.text }}
