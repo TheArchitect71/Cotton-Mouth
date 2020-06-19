@@ -1,48 +1,11 @@
 <section>
-  <mat-card class="example-card" routerLink="/about" routerLinkActive="active">
+  <mat-card *ngFor="let item of navigationList" class="example-card" routerLink="/{{ item.route }}" routerLinkActive="active">
     <mat-card-title>
-      About
+      {{ item.title }}
     </mat-card-title>
     <mat-card-content>
       <p>
-        To Be Authentic. To Surrender the Outcome. To Do Uncomfortable Work.
-      </p>
-    </mat-card-content>
-  </mat-card>
-  <mat-card class="example-card" routerLink="/experience" routerLinkActive="active">
-    <mat-card-title>
-      Experience
-    </mat-card-title>
-    <mat-card-content>
-      <p>Learning is an Active Process that Requires Ardor and Diligence.</p>
-    </mat-card-content>
-  </mat-card>
-  <mat-card class="example-card" routerLink="/projects" routerLinkActive="active">
-    <mat-card-title>
-      Projects
-    </mat-card-title>
-    <mat-card-content>
-      <p>Making a Lively Game Out of Mastering Web Development.</p>
-    </mat-card-content>
-  </mat-card>
-  <mat-card class="example-card" routerLink="/technology" routerLinkActive="active">
-    <mat-card-title>
-      Technology
-    </mat-card-title>
-    <mat-card-content>
-      <p>
-        Developing the Front-End and Back-End of the Web using Open Source
-        Tools.
-      </p>
-    </mat-card-content>
-  </mat-card>
-  <mat-card class="example-card" routerLink="/favorites" routerLinkActive="active">
-    <mat-card-title>
-      Favorites
-    </mat-card-title>
-    <mat-card-content>
-      <p>
-        Books, Movies and TV Shows Dealing with the Humanities.
+        {{ item.content }}
       </p>
     </mat-card-content>
   </mat-card>
