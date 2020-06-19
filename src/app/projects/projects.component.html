@@ -6,78 +6,19 @@
     </h3>
   </div>
   <div class="cards">
-    <mat-card class="example-card">
+    <mat-card *ngFor="let item of projectList" class="example-card">
       <mat-card-header>
         <div mat-card-avatar><i class="far fa-file-code"></i></div>
-        <mat-card-title>40-Eridani</mat-card-title>
+        <mat-card-title>{{ item.title }}</mat-card-title>
         <mat-card-subtitle>GitHub</mat-card-subtitle>
       </mat-card-header>
       <mat-card-content>
         <p>
-          Scalable and high-speed Web Application with Angular (formerly named
-          Angular 2, now just "Angular") and NodeJS + Express + MongoDB.
+          {{ item.text}}
         </p>
       </mat-card-content>
       <mat-card-actions>
-        <a mat-button href="https://github.com/TheArchitect71/40-Eridani"
-          >View More</a
-        >
-      </mat-card-actions>
-    </mat-card>
-    <mat-card class="example-card">
-      <mat-card-header>
-        <div mat-card-avatar><i class="far fa-file-code"></i></div>
-        <mat-card-title>Risa</mat-card-title>
-        <mat-card-subtitle>GitHub</mat-card-subtitle>
-      </mat-card-header>
-      <mat-card-content>
-        <p>
-          Using Node Core Node.js Basics & Basic Core Modules | Parsing Requests
-          & Sending Responses | Rendering HTML Dynamically (on the Server) |
-          Using Express.js
-        </p>
-      </mat-card-content>
-      <mat-card-actions>
-        <a mat-button href="https://github.com/TheArchitect71/Risa"
-          >View More</a
-        >
-      </mat-card-actions>
-    </mat-card>
-    <mat-card class="example-card">
-      <mat-card-header>
-        <div mat-card-avatar><i class="far fa-file-code"></i></div>
-        <mat-card-title>Andoria</mat-card-title>
-        <mat-card-subtitle>GitHub</mat-card-subtitle>
-      </mat-card-header>
-      <mat-card-content>
-        <p>
-          Relating to, denoting, or engaged in an employment pattern that
-          involves a succession of short-term contracts and part-time work,
-          rather than the more traditional model of a long-term single job.
-        </p>
-      </mat-card-content>
-      <mat-card-actions>
-        <a mat-button href="https://github.com/TheArchitect71/Andoria"
-          >View More</a
-        >
-      </mat-card-actions>
-    </mat-card>
-    <mat-card class="example-card">
-      <mat-card-header>
-        <div mat-card-avatar><i class="far fa-file-code"></i></div>
-        <mat-card-title>Inventory-Editor</mat-card-title>
-        <mat-card-subtitle>GitHub</mat-card-subtitle>
-      </mat-card-header>
-      <mat-card-content>
-        <p>
-          This basic app has many of the features you'd expect to find in a
-          data-driven application. It acquires and displays a list of products,
-          edits a selected product's detail, and navigates among different views
-          of data.
-        </p>
-      </mat-card-content>
-      <mat-card-actions>
-        <a mat-button href="https://github.com/TheArchitect71/Inventory-Editor"
+        <a mat-button href="{{ item.link }}"
           >View More</a
         >
       </mat-card-actions>
