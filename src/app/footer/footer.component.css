@@ -11,3 +11,9 @@ mat-grid-tile {
 .terms-width {
   width: 100%
 }
+p {
+  color:grey;
+}
+a {
+  color:#bf5700;
+}
