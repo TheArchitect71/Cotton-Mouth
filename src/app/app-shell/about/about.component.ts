@@ -1,8 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 
-// import { StarLinkService } from '../starlink.service';
-import { Information } from '../information';
-
 @Component({
   selector: 'app-about',
   templateUrl: './about.component.html',

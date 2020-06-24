@@ -2,12 +2,12 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 import { NavigationComponent} from './navigation/navigation.component';
-import { AboutComponent } from './about/about.component';
-import { ExperienceComponent } from './experience/experience.component';
-import { FavoritesComponent } from './favorites/favorites.component';
-import { ProjectsComponent } from './projects/projects.component';
-import { TechnologyComponent } from './technology/technology.component';
-import { ContactComponent } from './contact/contact.component';
+import { AboutComponent } from './app-shell//about/about.component';
+import { ExperienceComponent } from './app-shell//experience/experience.component';
+import { FavoritesComponent } from './app-shell//favorites/favorites.component';
+import { ProjectsComponent } from './app-shell//projects/projects.component';
+import { TechnologyComponent } from './app-shell//technology/technology.component';
+import { ContactComponent } from './app-shell//contact/contact.component';
 import { LoginComponent } from './authentication/login/login.component';
 
 const routes: Routes = [
