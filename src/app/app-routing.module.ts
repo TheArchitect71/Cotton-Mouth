@@ -8,7 +8,8 @@ import { FavoritesComponent } from './app-shell//favorites/favorites.component';
 import { ProjectsComponent } from './app-shell//projects/projects.component';
 import { TechnologyComponent } from './app-shell//technology/technology.component';
 import { ContactComponent } from './app-shell//contact/contact.component';
-import { LoginComponent } from './authentication/login/login.component';
+
+import { AuthGuard } from './authentication/auth.guard';
 
 const routes: Routes = [
   { path: '', component: NavigationComponent},
@@ -18,12 +19,13 @@ const routes: Routes = [
   { path: 'projects', component: ProjectsComponent},
   { path: 'technology', component: TechnologyComponent},
   { path: 'contact', component: ContactComponent},
-  { path: 'log-in', component: LoginComponent}
+  { path: 'auth', loadChildren: () => import('./authentication/auth.module').then(m => m.AuthModule)}
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes, {scrollPositionRestoration: 'enabled'})],
-  exports: [RouterModule]
+  exports: [RouterModule],
+  providers: [AuthGuard]
 })
 
 export class AppRoutingModule {}

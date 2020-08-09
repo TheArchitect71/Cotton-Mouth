@@ -9,24 +9,14 @@ section {
       width: 40%;
     }
   }
-  .page-title {
-    display: flex;
-    position: relative;
-    background: -webkit-linear-gradient(-120deg, #c40707, #bf5700);
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    justify-content: center;
+  mat-form-field {
+    width: 100%;
   }
-  .coming-soon {
-    display: flex;
-    position: relative;
-    -webkit-box-pack: center;
-    justify-content: center;
-    background-color: white;
-    margin-right: 1em;
-    margin-left: 1em;
-    padding: 1em 1em;
-    border-radius: 25px;
+  mat-spinner {
+    margin: auto;
   }
-  
+  mat-card {
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-bottom: 2em;
+  }

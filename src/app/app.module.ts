@@ -1,6 +1,6 @@
 import { NgModule } from "@angular/core";
 import { BrowserModule } from "@angular/platform-browser";
-import { HttpClientModule } from "@angular/common/http";
+import { HttpClientModule, HTTP_INTERCEPTORS } from "@angular/common/http";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 
 import { AppComponent } from "./app.component";
@@ -16,8 +16,7 @@ import { HeaderComponent } from "./header/header.component";
 import { ProjectsComponent } from "./app-shell/projects/projects.component";
 import { FavoritesComponent } from "./app-shell/favorites/favorites.component";
 import { ContactComponent } from './app-shell/contact/contact.component';
-import { LoginComponent } from './authentication/login/login.component';
-import { SignupComponent } from './authentication/signup/signup.component';
+import { AuthInterceptor } from "./authentication/auth-interceptor";
 
 @NgModule({
   declarations: [
@@ -30,18 +29,16 @@ import { SignupComponent } from './authentication/signup/signup.component';
     HeaderComponent,
     ProjectsComponent,
     FavoritesComponent,
-    ContactComponent,
-    LoginComponent,
-    SignupComponent,
+    ContactComponent
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     AppRoutingModule,
     HttpClientModule,
-    AngularMaterialModule
+    AngularMaterialModule,
   ],
-  providers: [],
+  providers: [ { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true } ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
