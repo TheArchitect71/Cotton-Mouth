@@ -12,9 +12,8 @@
   </mat-selection-list>
   </mat-sidenav>
 
-  <mat-sidenav-content>
+  <mat-sidenav-content class="background-sky">
     <header>
-      <div class="background-sky hero"></div>
       <mat-grid-list cols="3" rowHeight="7em">
         <mat-grid-tile>
           <button
@@ -37,7 +36,7 @@
         <mat-grid-tile>
           <button
             mat-raised-button
-            [routerLink]="['/log-in']"
+            [routerLink]="['/auth/login']"
             routerLinkActive="router-link-active"
             color="primary"
           >

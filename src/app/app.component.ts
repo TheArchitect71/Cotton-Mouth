@@ -1,5 +1,4 @@
 import { Component } from "@angular/core";
-import { profile } from "console";
 
 @Component({
   selector: "app-root",
