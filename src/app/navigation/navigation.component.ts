@@ -13,40 +13,63 @@ export class NavigationComponent implements OnInit {
     {
       id: 1,
       route: '/about',
-      title: `About`,
-      content: `To Be Authentic. To Surrender the Outcome. To Do Uncomfortable Work.`
+      title: `The Story`,
+      content: `If a Story is in You. It has to Come Out`
     },
     {
       id: 2,
       route: '/experience',
-      title: `Experience`,
-      content: `Learning is an Active Process that Requires Ardor and Diligence.`
+      title: `Destination Journey`,
+      content: `Finding your Life's Purpose or True Calling`
     },
     {
       id: 3,
       route: '/projects',
-      title: `Projects`,
-      content: `Making a Lively Game Out of Mastering Web Development.`
+      title: `Overcomer's Journey`,
+      content: `Conquering your Fears`
     },
     {
       id: 4,
       route: '/technology',
-      title: `Technology`,
-      content: `Developing the Front-End and Back-End of the Web using Open Source
-      Tools.`
+      title: `Chaotic Resolve Journey`,
+      content: `Achieving Inner Peace`
     },
     {
       id: 5,
       route: '/favorites',
-      title: `Favorites`,
-      content: `Books, Movies and TV Shows Dealing with the Humanities.`
+      title: `Achievement Journey`,
+      content: `Creating New Goals`
     },
-    // {
-    //   id: 6,
-    //   route: '/education',
-    //   title: `Education`,
-    //   content: `Facilitating the acquisition of knowledge, skills, values, beliefs, and habits.`
-    // }
+    {
+      id: 6,
+      route: '/education',
+      title: `Self-Discovery Journey`,
+      content: `Exploring your True Creative Passions`
+    },
+    {
+      id: 2,
+      route: '/experience',
+      title: `Writing a New Chapter Journey`,
+      content: `Learning from Past Mistakes`
+    },
+    {
+      id: 3,
+      route: '/projects',
+      title: `Mending Fences Journey`,
+      content: `Righting my Wrongs`
+    },
+    {
+      id: 4,
+      route: '/technology',
+      title: `Self-Improvement Journey`,
+      content: `Loving Yourself Through Acceptance`
+    },
+    {
+      id: 5,
+      route: '/favorites',
+      title: `Spiritual Journey`,
+      content: `Exploring my Beliefs`
+    }
   ]
 
   ngOnInit() {
