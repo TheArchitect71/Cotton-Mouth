@@ -33,5 +33,10 @@ export class AppComponent {
       title: `About`,
       content: `To Be Authentic. To Surrender the Outcome. To Do Uncomfortable Work.`,
     },
+    {
+      id: 13,
+      route: "/auth/signup",
+      title: 'Sign Up'
+    }
   ];
 }

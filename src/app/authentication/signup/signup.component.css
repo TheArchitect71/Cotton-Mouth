@@ -1,0 +1,22 @@
+section {
+    margin-bottom: 1em;
+  }
+  @media (min-width: 1000px) {
+    section {
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      width: 40%;
+    }
+  }
+  mat-form-field {
+    width: 100%;
+  }
+  mat-spinner {
+    margin: auto;
+  }
+  mat-card {
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-bottom: 2em;
+  }
