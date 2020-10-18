@@ -37,6 +37,11 @@ export class AppComponent {
       id: 13,
       route: "/auth/signup",
       title: 'Sign Up'
+    },
+    {
+      id: 13,
+      route: "/auth/login",
+      title: 'Log In'
     }
   ];
 }
