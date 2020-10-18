@@ -10,6 +10,7 @@ import { TechnologyComponent } from './app-shell//technology/technology.componen
 import { ContactComponent } from './app-shell//contact/contact.component';
 
 import { AuthGuard } from './authentication/auth.guard';
+import { ListComponent } from './questions/list/list.component';
 
 const routes: Routes = [
   { path: '', component: NavigationComponent},
@@ -19,7 +20,8 @@ const routes: Routes = [
   { path: 'projects', component: ProjectsComponent},
   { path: 'technology', component: TechnologyComponent},
   { path: 'contact', component: ContactComponent},
-  { path: 'auth', loadChildren: () => import('./authentication/auth.module').then(m => m.AuthModule)}
+  { path: 'auth', loadChildren: () => import('./authentication/auth.module').then(m => m.AuthModule)},
+  { path: 'questions', component: ListComponent},
 ];
 
 @NgModule({

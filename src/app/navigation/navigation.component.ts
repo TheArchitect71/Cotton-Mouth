@@ -12,7 +12,7 @@ export class NavigationComponent implements OnInit {
   navigationList = [
     {
       id: 1,
-      route: '/about',
+      route: '/questions',
       title: `The Story`,
       content: `If a Story is in You. It has to Come Out`
     },
