@@ -1,0 +1,20 @@
+.mat-form-field + .mat-form-field {
+  margin-left: 8px;
+}
+mat-panel-title,
+mat-panel-description {
+  padding: 10px 0;
+}
+.example-spacer {
+  flex: 1 1 auto;
+}
+mat-expansion-panel {
+  margin-left: 1em;
+  margin-right: 1em;
+  padding-top: 1em;
+  padding-bottom: 1em;
+}
+.mat-expansion-button {
+  display: flex;
+  justify-content: right;
+}

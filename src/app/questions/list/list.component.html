@@ -1,31 +1,25 @@
 <!-- *ngFor="let product of products" -->
 <!-- routerLink="/detail/{{ product.id }}" -->
 <mat-accordion>
-    <mat-expansion-panel
-      (opened)="panelOpenState = true"
-      (closed)="panelOpenState = false"
-      
-    >
-      <mat-expansion-panel-header>
-        <mat-panel-title>
-          <!-- {{ product.name }} --> What’s the craziest stuff you did in your life?
-        </mat-panel-title>
-        <mat-panel-description>
-          <!-- {{ product.price | currency }} -->
-        </mat-panel-description>
-      </mat-expansion-panel-header>
-        <!-- <p>{{ product.description }}</p> -->
-        <button
-        mat-raised-button
-        color="accent"
-        class="edit"
-        title="Answer"
-        
-        >
-        <span class="material-icons">
-          create
-        </span>
-        Edit
+  <mat-expansion-panel
+    (opened)="panelOpenState = true"
+    (closed)="panelOpenState = false"
+  >
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        <!-- {{ product.name }} -->
+        What’s the craziest stuff you did in your life?
+      </mat-panel-title>
+      <mat-panel-description>
+        <!-- {{ product.price | currency }} -->
+      </mat-panel-description>
+    </mat-expansion-panel-header>
+    <!-- <p>{{ product.description }}</p> -->
+    <div class="mat-expansion-button">
+      <button mat-raised-button color="accent" class="edit" title="Answer">
+        <span class="material-icons"> create </span>
+        Answer
       </button>
+    </div>
   </mat-expansion-panel>
-  </mat-accordion>
+</mat-accordion>
