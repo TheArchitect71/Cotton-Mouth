@@ -1,5 +1,5 @@
 <!-- *ngFor="let product of products" -->
-<!-- routerLink="/detail/{{ product.id }}" -->
+
 <mat-accordion>
   <mat-expansion-panel
     (opened)="panelOpenState = true"
@@ -16,7 +16,7 @@
     </mat-expansion-panel-header>
     <!-- <p>{{ product.description }}</p> -->
     <div class="mat-expansion-button">
-      <button mat-raised-button color="accent" class="edit" title="Answer">
+      <button mat-raised-button color="accent" class="edit" title="Answer" routerLink="/answer" routerLinkActive="router-link-active" >
         <span class="material-icons"> create </span>
         Answer
       </button>

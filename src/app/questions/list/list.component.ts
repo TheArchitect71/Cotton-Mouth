@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { QuestionsService } from '../questions.service';
 
 @Component({
   selector: 'app-list',
@@ -7,9 +8,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ListComponent implements OnInit {
   panelOpenState = false;
-  constructor() { }
+  questions = [];
+  constructor(private questionsService: QuestionsService) { }
 
   ngOnInit(): void {
+    this.getQuestions
+  }
+
+  getQuestions(): void {
+    this.questionsService.getQuestions().subscribe(questions => {
+      this.questions = questions;
+    })
   }
 
 }

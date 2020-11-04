@@ -11,6 +11,7 @@ import { ContactComponent } from './app-shell//contact/contact.component';
 
 import { AuthGuard } from './authentication/auth.guard';
 import { ListComponent } from './questions/list/list.component';
+import { AnswerComponent } from './questions/answer/answer.component';
 
 const routes: Routes = [
   { path: '', component: NavigationComponent},
@@ -22,6 +23,7 @@ const routes: Routes = [
   { path: 'contact', component: ContactComponent},
   { path: 'auth', loadChildren: () => import('./authentication/auth.module').then(m => m.AuthModule)},
   { path: 'questions', component: ListComponent},
+  { path: 'answer', component: AnswerComponent}
 ];
 
 @NgModule({
