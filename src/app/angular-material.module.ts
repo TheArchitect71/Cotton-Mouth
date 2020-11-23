@@ -60,6 +60,7 @@ import {MatTreeModule} from '@angular/material/tree';
     MatSelectModule,
     MatGridListModule,
     MatExpansionModule,
+    MatPaginatorModule,
     MatFormFieldModule
   ]
 })
