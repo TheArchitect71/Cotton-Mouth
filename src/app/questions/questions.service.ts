@@ -7,7 +7,7 @@ import { Router } from "@angular/router";
 import { Question } from "./question.model";
 
 import { environment } from "../../environments/environment";
-const BACKEND_URL = environment.apiUrl + "api/v1/questions";
+const BACKEND_URL = environment.apiUrl + "/api/v1/questions";
 
 @Injectable({
   providedIn: "root",
@@ -38,7 +38,7 @@ export class QuestionsService {
               return {
                 title: question.title,
                 id: question._id,
-                creator: question.creator,
+                content: question.creator,
               };
             }),
             maxQuestions: questionData.maxQuestions,
@@ -61,15 +61,13 @@ export class QuestionsService {
   getQuestion(id: string) {
     return this.http.get<{
       _id: string;
-      title: string;
-      creator: string;
+      answer: string;
     }>(BACKEND_URL + id);
   }
 
   addQuestion(title: string, content: string) {
     const questionData = new FormData();
     questionData.append("title", title);
-    questionData.append("content", content);
     this.http
       .post<{ message: string; question: Question }>(BACKEND_URL, questionData)
       .subscribe((responseData) => {
