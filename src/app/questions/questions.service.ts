@@ -59,9 +59,7 @@ export class QuestionsService {
   }
 
   getQuestion(id: string) {
-    return this.http.get<{
-      id: string;
-    }>(`${BACKEND_URL}/id/${id}`);
+    return this.http.get<Question>(`${BACKEND_URL}/id/${id}`);
   }
 
   addQuestion(title: string, content: string) {
