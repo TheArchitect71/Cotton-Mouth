@@ -1,4 +1,7 @@
 import { Component } from "@angular/core";
+import { Subscription } from "rxjs";
+
+import { AuthService } from "src/app/authentication/auth.service";
 
 @Component({
   selector: "app-root",
@@ -8,6 +11,26 @@ import { Component } from "@angular/core";
 export class AppComponent {
   opened: boolean;
   userIsAuthenticated = false;
+  private authListenerSubs: Subscription;
+
+  constructor(private authService: AuthService) {}
+
+  ngOnInit() {
+    this.userIsAuthenticated = this.authService.getIsAuth();
+    this.authListenerSubs = this.authService
+      .getAuthStatusListener()
+      .subscribe(isAuthenticated => {
+        this.userIsAuthenticated = isAuthenticated;
+      });
+  }
+
+  onLogout() {
+    this.authService.logout();
+  }
+
+  ngOnDestroy() {
+    this.authListenerSubs.unsubscribe();
+  }
 
   navigationList = [
     {
@@ -33,16 +56,6 @@ export class AppComponent {
       route: "/about",
       title: `About`,
       content: `To Be Authentic. To Surrender the Outcome. To Do Uncomfortable Work.`,
-    },
-    {
-      id: 13,
-      route: "/auth/signup",
-      title: 'Sign Up'
-    },
-    {
-      id: 13,
-      route: "/auth/login",
-      title: 'Log In'
     }
   ];
 }

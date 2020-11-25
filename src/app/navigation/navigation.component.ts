@@ -56,7 +56,7 @@ export class NavigationComponent implements OnInit {
       id: 3,
       route: '/projects',
       title: `Mending Fences Journey`,
-      content: `Righting my Wrongs`
+      content: `Righting your Wrongs`
     },
     {
       id: 4,
@@ -68,7 +68,7 @@ export class NavigationComponent implements OnInit {
       id: 5,
       route: '/favorites',
       title: `Spiritual Journey`,
-      content: `Exploring my Beliefs`
+      content: `Exploring your Beliefs`
     }
   ]
 

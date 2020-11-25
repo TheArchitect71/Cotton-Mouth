@@ -20,9 +20,7 @@
             routerLinkActive="router-link-active"
             color="primary"
           >
-          <span class="material-icons">
-            menu
-            </span>
+            <span class="material-icons"> menu </span>
           </button>
         </mat-grid-tile>
         <mat-grid-tile
@@ -33,28 +31,24 @@
             alt="existential thinker logo"
           />
         </mat-grid-tile>
-        <mat-grid-tile *ngIf="!userIsAuthenticated">
+        <mat-grid-tile>
           <button
+            *ngIf="!userIsAuthenticated"
             mat-raised-button
             [routerLink]="['/auth/login']"
             routerLinkActive="router-link-active"
             color="primary"
           >
-          <span class="material-icons">
-            person
-            </span>
+            <span class="material-icons"> person </span>
           </button>
-        </mat-grid-tile>
-        <mat-grid-tile *ngIf="userIsAuthenticated">
           <button
+            *ngIf="userIsAuthenticated"
             mat-raised-button
-            [routerLink]="['/auth/login']"
+            (click)="onLogout()"
             routerLinkActive="router-link-active"
             color="primary"
           >
-          <span class="material-icons">
-            exit_to_app
-            </span>
+            <span class="material-icons"> exit_to_app </span>
           </button>
         </mat-grid-tile>
       </mat-grid-list>
