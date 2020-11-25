@@ -14,10 +14,10 @@ import { AuthService } from "src/app/authentication/auth.service";
 })
 export class AnswerComponent implements OnInit, OnDestroy {
   // enteredAnswer = "";
-  question: Question;
+  question: any;
   isLoading = false;
   // form: FormGroup;
-  // private mode = "create";
+  private mode = "create";
   private id: string;
   private title: string;
   private authStatusSub: Subscription;
@@ -38,9 +38,21 @@ export class AnswerComponent implements OnInit, OnDestroy {
   }
 
   getQuestion(): void {
-    const id = this.route.snapshot.paramMap.get('id');
-    this.questionsService.getQuestion(id)
-      .subscribe(question => this.question = question);
+    this.route.paramMap.subscribe((paramMap: ParamMap) => {
+      if (paramMap.has("id")) {
+        this.mode = 'edit';
+        this.id = paramMap.get("id");
+        this.questionsService.getQuestion(this.id).subscribe(postData => {
+          this.question = {
+            id: postData.question._id,
+            title: postData.question.title
+          };
+        });
+      } else { 
+        this.mode = 'create';
+        this.id = null;
+      }
+    })
     }
 
   // onSaveQuestion() {

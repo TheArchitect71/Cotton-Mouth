@@ -21,7 +21,7 @@
         color="primary"
         class="edit"
         title="Answer"
-        routerLink='/answer/{{ question.id }}'
+        [routerLink]="['/answer', question.id]"
         routerLinkActive="router-link-active"
       >
         <span class="material-icons"> create </span>

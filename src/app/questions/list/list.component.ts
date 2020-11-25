@@ -19,7 +19,7 @@ export class ListComponent implements OnInit, OnDestroy {
   currentPage = 1;
   pageSizeOptions = [1, 2, 5, 10];
   userIsAuthenticated = false;
-  userId: string;
+  userId: {};
   private questionsSub: Subscription;
   private authStatusSub: Subscription;
 

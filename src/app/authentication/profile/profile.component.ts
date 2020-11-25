@@ -9,7 +9,7 @@ import { AuthService } from "../auth.service";
 })
 export class ProfileComponent implements OnInit, OnDestroy {
   isLoading = false;
-  user = { id: "" };
+  user: string
   private authStatusSub: Subscription;
 
   constructor(public authService: AuthService) {}
@@ -20,7 +20,7 @@ export class ProfileComponent implements OnInit, OnDestroy {
       .subscribe((authStatus) => {
         this.isLoading = false;
       });
-    this.user.id = this.authService.getUserId();
+      this.user = this.authService.getUserId()
   }
 
   onLogout() {

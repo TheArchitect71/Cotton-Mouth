@@ -1,7 +1,7 @@
 import { Injectable } from "@angular/core";
 import { Observable, of, Subject } from "rxjs";
 import { HttpClient, HttpHeaders } from "@angular/common/http";
-import { catchError, map, tap } from "rxjs/operators";
+import { catchError, map, subscribeOn, tap } from "rxjs/operators";
 import { Router } from "@angular/router";
 
 import { Question } from "./question.model";
@@ -59,7 +59,8 @@ export class QuestionsService {
   }
 
   getQuestion(id: string) {
-    return this.http.get<Question>(`${BACKEND_URL}/id/${id}`);
+    return this.http
+      .get<{question: {_id: string, title: string}}>(`${BACKEND_URL}/id/${id}`, { responseType: "json" })
   }
 
   addQuestion(title: string, content: string) {
