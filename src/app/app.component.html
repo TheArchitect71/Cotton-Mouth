@@ -44,7 +44,7 @@
           <button
             *ngIf="userIsAuthenticated"
             mat-raised-button
-            (click)="onLogout()"
+            [routerLink]="['/auth/profile']"
             routerLinkActive="router-link-active"
             color="primary"
           >

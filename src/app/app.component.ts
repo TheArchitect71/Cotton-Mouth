@@ -16,6 +16,7 @@ export class AppComponent {
   constructor(private authService: AuthService) {}
 
   ngOnInit() {
+    this.authService.autoAuthUser();
     this.userIsAuthenticated = this.authService.getIsAuth();
     this.authListenerSubs = this.authService
       .getAuthStatusListener()
