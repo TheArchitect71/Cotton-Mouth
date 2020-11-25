@@ -1,6 +1,6 @@
 import { Component, OnDestroy, OnInit } from "@angular/core";
 import { FormGroup, FormControl, Validators } from "@angular/forms";
-import { ActivatedRoute, ParamMap } from "@angular/router";
+import { ActivatedRoute, ParamMap, Params } from "@angular/router";
 import { Subscription } from "rxjs";
 
 import { QuestionsService } from "../questions.service";
@@ -13,14 +13,13 @@ import { AuthService } from "src/app/authentication/auth.service";
   styleUrls: ["./answer.component.css"],
 })
 export class AnswerComponent implements OnInit, OnDestroy {
-  enteredTitle = "";
-  enteredContent = "";
+  // enteredAnswer = "";
   question: Question;
   isLoading = false;
-  form: FormGroup;
-  imagePreview: string;
-  private mode = "create";
-  private questionId: string;
+  // form: FormGroup;
+  // private mode = "create";
+  private id: string;
+  private title: string;
   private authStatusSub: Subscription;
 
   constructor(
@@ -29,59 +28,36 @@ export class AnswerComponent implements OnInit, OnDestroy {
     private authService: AuthService
   ) {}
 
-  ngOnInit() {
+  ngOnInit(): void {
     this.authStatusSub = this.authService
       .getAuthStatusListener()
       .subscribe((authStatus) => {
         this.isLoading = false;
       });
-    this.form = new FormGroup({
-      title: new FormControl(null, {
-        validators: [Validators.required, Validators.minLength(3)],
-      }),
-      content: new FormControl(null, { validators: [Validators.required] }),
-    });
-    this.route.paramMap.subscribe((paramMap: ParamMap) => {
-      if (paramMap.has("questionId")) {
-        this.mode = "edit";
-        this.questionId = paramMap.get("questionId");
-        this.isLoading = true;
-        this.questionsService.getQuestion(this.questionId).subscribe((questionData) => {
-          this.isLoading = false;
-          this.question = {
-            id: questionData._id,
-            title: questionData.title,
-            // creator: questionData.creator,
-          };
-          this.form.setValue({
-            title: this.question.title,
-          });
-        });
-      } else {
-        this.mode = "create";
-        this.questionId = null;
-      }
-    });
+    this.getQuestion();
   }
 
-  onSaveQuestion() {
-    if (this.form.invalid) {
-      return;
+  getQuestion(): void {
+    const id = this.route.snapshot.paramMap.get('id');
+    this.questionsService.getQuestion(id)
+      .subscribe(question => this.question = question);
     }
-    this.isLoading = true;
-    if (this.mode === "create") {
-      this.questionsService.addQuestion(
-        this.form.value.title,
-        this.form.value.content,
-      );
-    } else {
-      this.questionsService.updateQuestion(
-        this.questionId,
-        this.form.value.title,
-      );
-    }
-    this.form.reset();
-  }
+
+  // onSaveQuestion() {
+  //   if (this.form.invalid) {
+  //     return;
+  //   }
+  //   this.isLoading = true;
+  //   if (this.mode === "create") {
+  //     this.questionsService.addQuestion(
+  //       this.form.value.answer,
+  //       this.form.value.content
+  //     );
+  //   } else {
+  //     this.questionsService.updateQuestion(this.id, this.form.value.answer);
+  //   }
+  //   this.form.reset();
+  // }
 
   ngOnDestroy() {
     this.authStatusSub.unsubscribe();

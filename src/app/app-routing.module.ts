@@ -23,7 +23,7 @@ const routes: Routes = [
   { path: 'contact', component: ContactComponent},
   { path: 'auth', loadChildren: () => import('./authentication/auth.module').then(m => m.AuthModule)},
   { path: 'questions', component: ListComponent},
-  { path: 'answer', component: AnswerComponent}
+  { path: 'answer/:id', component: AnswerComponent}
 ];
 
 @NgModule({

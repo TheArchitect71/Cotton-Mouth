@@ -60,9 +60,8 @@ export class QuestionsService {
 
   getQuestion(id: string) {
     return this.http.get<{
-      _id: string;
-      answer: string;
-    }>(BACKEND_URL + id);
+      id: string;
+    }>(`${BACKEND_URL}/id/${id}`);
   }
 
   addQuestion(title: string, content: string) {

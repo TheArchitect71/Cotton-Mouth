@@ -1,4 +1,5 @@
 <mat-spinner *ngIf="isLoading"></mat-spinner>
+
 <mat-accordion multi="true" *ngIf="questions.length > 0">
   <mat-expansion-panel
     *ngFor="let question of questions"
@@ -13,22 +14,23 @@
         <!-- {{ question.price | currency }} -->
       </mat-panel-description>
     </mat-expansion-panel-header>
-    <p>{{ question.description }}</p>
+    <p>{{ question.id }}</p>
     <div class="mat-expansion-button">
-      <button
+      <a
         mat-raised-button
-        color="accent"
+        color="primary"
         class="edit"
         title="Answer"
-        routerLink="/answer"
+        routerLink='/answer/{{ question.id }}'
         routerLinkActive="router-link-active"
       >
         <span class="material-icons"> create </span>
         Answer
-      </button>
+    </a>
     </div>
   </mat-expansion-panel>
 </mat-accordion>
+
 <mat-paginator
   [length]="totalQuestions"
   [pageSize]="questionsPerPage"
@@ -36,6 +38,7 @@
   (page)="onChangedPage($event)"
   *ngIf="questions.length > 0"
 ></mat-paginator>
+
 <p class="info-text mat-body-1" *ngIf="questions.length <= 0 && !isLoading">
   No questions added yet!
 </p>

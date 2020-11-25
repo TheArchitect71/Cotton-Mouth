@@ -49,11 +49,6 @@ export class ListComponent implements OnInit, OnDestroy {
     this.questionsService.getQuestions(this.questionsPerPage, this.currentPage);
   }
 
-  // getQuestions(): void {
-  //   this.questionsService.getQuestions().subscribe((questions) => {
-  //     this.questions = questions;
-  //   });
-  // }
   ngOnDestroy() {
     this.questionsSub.unsubscribe();
     this.authStatusSub.unsubscribe();
