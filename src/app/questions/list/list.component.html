@@ -1,44 +1,45 @@
-<mat-spinner *ngIf="isLoading"></mat-spinner>
+<section>
+  <mat-spinner *ngIf="isLoading"></mat-spinner>
 
-<mat-accordion multi="true" *ngIf="questions.length > 0">
-  <mat-expansion-panel
-    *ngFor="let question of questions"
-    (opened)="panelOpenState = true"
-    (closed)="panelOpenState = false"
-  >
-    <mat-expansion-panel-header>
-      <mat-panel-title>
-        {{ question.title }}
-      </mat-panel-title>
-      <mat-panel-description>
-        <!-- {{ question.price | currency }} -->
-      </mat-panel-description>
-    </mat-expansion-panel-header>
-    <p>{{ question.id }}</p>
-    <div class="mat-expansion-button">
-      <a
-        mat-raised-button
-        color="primary"
-        class="edit"
-        title="Answer"
-        [routerLink]="['/answer', question.id]"
-        routerLinkActive="router-link-active"
-      >
-        <span class="material-icons"> create </span>
-        Answer
-    </a>
-    </div>
-  </mat-expansion-panel>
-</mat-accordion>
+  <mat-accordion *ngIf="questions.length > 0">
+    <mat-expansion-panel
+      *ngFor="let question of questions"
+      (opened)="panelOpenState = true"
+      (closed)="panelOpenState = false"
+    >
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          {{ question.title }}
+        </mat-panel-title>
+        <mat-panel-description>
+          <!-- {{ question.price | currency }} -->
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+      <div class="mat-expansion-button">
+        <a
+          mat-raised-button
+          color="primary"
+          class="edit"
+          title="Answer"
+          [routerLink]="['/answer', question.id]"
+          routerLinkActive="router-link-active"
+        >
+          <span class="material-icons"> create </span>
+          Answer
+        </a>
+      </div>
+    </mat-expansion-panel>
+  </mat-accordion>
 
-<mat-paginator
-  [length]="totalQuestions"
-  [pageSize]="questionsPerPage"
-  [pageSizeOptions]="pageSizeOptions"
-  (page)="onChangedPage($event)"
-  *ngIf="questions.length > 0"
-></mat-paginator>
+  <mat-paginator
+    [length]="totalQuestions"
+    [pageSize]="questionsPerPage"
+    [pageSizeOptions]="pageSizeOptions"
+    (page)="onChangedPage($event)"
+    *ngIf="questions.length > 0"
+  ></mat-paginator>
 
-<p class="info-text mat-body-1" *ngIf="questions.length <= 0 && !isLoading">
-  No questions added yet!
-</p>
+  <mat-card class="info-text mat-body-1" *ngIf="questions.length <= 0 && !isLoading">
+    No questions added yet!
+  </mat-card>
+</section>

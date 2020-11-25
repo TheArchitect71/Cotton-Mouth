@@ -45,7 +45,8 @@ export class AnswerComponent implements OnInit, OnDestroy {
         this.questionsService.getQuestion(this.id).subscribe(postData => {
           this.question = {
             id: postData.question._id,
-            title: postData.question.title
+            title: postData.question.title,
+            answers: postData.question.answers
           };
         });
       } else { 

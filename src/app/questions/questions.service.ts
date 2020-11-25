@@ -60,7 +60,7 @@ export class QuestionsService {
 
   getQuestion(id: string) {
     return this.http
-      .get<{question: {_id: string, title: string}}>(`${BACKEND_URL}/id/${id}`, { responseType: "json" })
+      .get<{question: {_id: string, title: string, answers: []}}>(`${BACKEND_URL}/id/${id}`, { responseType: "json" })
   }
 
   addQuestion(title: string, content: string) {
