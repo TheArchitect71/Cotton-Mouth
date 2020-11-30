@@ -1,9 +1,15 @@
 <section>
-  <mat-card >
+  <mat-card class="question">
     <p *ngIf="question">{{ question.title }}</p>
   </mat-card>
-
-  <mat-card>Simple card {{question.answers}}</mat-card>
-
-
+  <div class="answer_container">
+    <mat-card class="answer" *ngFor="let answer of question.answers; index as questionId">
+      <mat-card-subtitle
+        >{{ answer.date | date: mediumDate }}
+      </mat-card-subtitle>
+      <mat-card-content>
+        {{ answer.answer }}
+      </mat-card-content>
+    </mat-card>
+  </div>
 </section>

@@ -14,7 +14,11 @@ import { AuthService } from "src/app/authentication/auth.service";
 })
 export class AnswerComponent implements OnInit, OnDestroy {
   // enteredAnswer = "";
-  question: any;
+  question: any = {
+    id: '',
+    title: '',
+    answers: []
+  };
   isLoading = false;
   // form: FormGroup;
   private mode = "create";

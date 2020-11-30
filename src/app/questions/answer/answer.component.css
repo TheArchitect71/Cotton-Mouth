@@ -9,3 +9,21 @@
 mat-card {
   text-align: center;
 }
+mat-card-subtitle {
+  text-align: right;
+}
+mat-card-content {
+  text-align: left;
+}
+.question {
+  margin-bottom: 3em;
+}
+.answer {
+  margin: 10px;
+}
+.answer_container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding-top: 15px;
+}
