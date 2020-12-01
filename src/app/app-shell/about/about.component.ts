@@ -36,22 +36,10 @@ export class AboutComponent {
 
   navigationList = [
     {
-      id: 1,
-      route: '/about',
-      title: `About`,
-      content: `To Be Authentic. To Surrender the Outcome. To Do Uncomfortable Work.`
-    },
-    {
       id: 2,
       route: '/experience',
       title: `Experience`,
       content: `Learning is an Active Process that Requires Ardor and Diligence.`
-    },
-    {
-      id: 3,
-      route: '/projects',
-      title: `Projects`,
-      content: `Making a Lively Game Out of Mastering Web Development.`
     },
     {
       id: 4,

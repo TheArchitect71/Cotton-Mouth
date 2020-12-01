@@ -13,7 +13,6 @@ import { AboutComponent } from "./app-shell/about/about.component";
 import { NavigationComponent } from "./navigation/navigation.component";
 import { FooterComponent } from "./footer/footer.component";
 import { AppRoutingModule } from "./app-routing.module";
-import { ProjectsComponent } from "./app-shell/projects/projects.component";
 import { FavoritesComponent } from "./app-shell/favorites/favorites.component";
 import { ContactComponent } from './app-shell/contact/contact.component';
 import { AuthInterceptor } from "./authentication/auth-interceptor";
@@ -26,7 +25,6 @@ import { AuthInterceptor } from "./authentication/auth-interceptor";
     AboutComponent,
     NavigationComponent,
     FooterComponent,
-    ProjectsComponent,
     FavoritesComponent,
     ContactComponent
   ],

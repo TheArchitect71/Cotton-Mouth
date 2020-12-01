@@ -1,6 +1,6 @@
 <section>
   <mat-card class="question">
-    <p *ngIf="question">{{ question.title }}</p>
+    <h3 *ngIf="question">{{ question.title }}</h3>
   </mat-card>
   <div class="answer_container">
     <mat-card class="answer" *ngFor="let answer of question.answers; index as questionId">
