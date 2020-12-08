@@ -13,19 +13,19 @@ import { ListComponent } from './questions/list/list.component';
 import { AnswerComponent } from './questions/answer/answer.component';
 
 const routes: Routes = [
-  { path: '', component: NavigationComponent},
+  { path: '', component: NavigationComponent, data: {animation: 'FilterPage'}},
   { path: 'about', component: AboutComponent },
   { path: 'experience', component: ExperienceComponent},
   { path: 'favorites', component: FavoritesComponent},
   { path: 'technology', component: TechnologyComponent},
   { path: 'contact', component: ContactComponent},
   { path: 'auth', loadChildren: () => import('./authentication/auth.module').then(m => m.AuthModule)},
-  { path: 'questions', component: ListComponent},
+  { path: 'questions/:journeyPath', component: ListComponent},
   { path: 'answer/:id', component: AnswerComponent}
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes, {scrollPositionRestoration: 'enabled'})],
+  imports: [RouterModule.forRoot(routes, {scrollPositionRestoration: 'disabled'})],
   exports: [RouterModule],
   providers: [AuthGuard]
 })

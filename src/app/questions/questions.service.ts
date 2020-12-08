@@ -7,6 +7,7 @@ import { Router } from "@angular/router";
 import { Question } from "./question.model";
 
 import { environment } from "../../environments/environment";
+
 const BACKEND_URL = environment.apiUrl + "/api/v1/questions";
 
 @Injectable({
@@ -54,13 +55,43 @@ export class QuestionsService {
       });
   }
 
+  getQuestionByJourney(journeyPath: string) {
+    const queryParams = `/journeys/${journeyPath}`;
+    this.http
+      .get<{ message: string; titles: any; maxQuestions: number }>(
+        BACKEND_URL + queryParams
+      )
+      .pipe(
+        map((questionData) => {
+          return {
+            questions: questionData.titles.map((question) => {
+              return {
+                title: question.title,
+                id: question._id,
+                content: question.creator,
+              };
+            }),
+            maxQuestions: questionData.maxQuestions,
+          };
+        })
+      )
+      .subscribe((transformedQuestionData) => {
+        this.questions = transformedQuestionData.questions;
+        this.questionsUpdated.next({
+          questions: [...this.questions],
+          questionCount: transformedQuestionData.maxQuestions,
+        });
+      });
+  }
+
   getQuestionUpdateListener() {
     return this.questionsUpdated.asObservable();
   }
 
   getQuestion(id: string) {
-    return this.http
-      .get<{question: {_id: string, title: string, answers: []}}>(`${BACKEND_URL}/id/${id}`, { responseType: "json" })
+    return this.http.get<{
+      question: { _id: string; title: string; answers: [] };
+    }>(`${BACKEND_URL}/id/${id}`, { responseType: "json" });
   }
 
   addQuestion(title: string, content: string) {
