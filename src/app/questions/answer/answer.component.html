@@ -1,9 +1,39 @@
 <section>
-  <mat-card class="question">
-    <h3 *ngIf="question">{{ question.title }}</h3>
+  <mat-card class="question_container">
+    <mat-card-content *ngIf="question">{{ question.title }}</mat-card-content>
   </mat-card>
+
+  <mat-card>
+    <button
+    @myInsertRemoveTrigger
+    *ngIf="answer.value.length > 0"
+    mat-mini-fab
+    color="primary"
+    aria-label="Example icon button with a menu icon"
+  >
+    <span class="material-icons"> save </span>
+  </button>
+    <mat-form-field appearance="outline">
+      <mat-label>{{ currentDate | date: "mediumDate" }}</mat-label>
+      <textarea
+        matInput
+        #answer
+        cdkTextareaAutosize
+        #autosize="cdkTextareaAutosize"
+        cdkAutosizeMinRows="1"
+        cdkAutosizeMaxRows="10"
+        maxlength="3000"
+        placeholder="as you were saying..."
+      ></textarea>
+      <mat-hint align="end">{{ answer.value.length }} / 3000</mat-hint>
+    </mat-form-field>
+  </mat-card>
+
   <div class="answer_container">
-    <mat-card class="answer" *ngFor="let answer of question.answers; index as questionId">
+    <mat-card
+      class="answer"
+      *ngFor="let answer of question.answers; index as questionId"
+    >
       <mat-card-subtitle
         >{{ answer.date | date: mediumDate }}
       </mat-card-subtitle>

@@ -1,5 +1,8 @@
 import { Component, OnDestroy, OnInit } from "@angular/core";
 import { FormGroup, FormControl, Validators } from "@angular/forms";
+import { formatDate } from "@angular/common";
+
+import { trigger, transition, animate, style } from '@angular/animations';
 import { ActivatedRoute, ParamMap, Params } from "@angular/router";
 import { Subscription } from "rxjs";
 
@@ -9,15 +12,25 @@ import { AuthService } from "src/app/authentication/auth.service";
 
 @Component({
   selector: "app-answer",
+  animations: [
+    trigger('myInsertRemoveTrigger', [
+      transition(':enter', [
+        style({ opacity: 0 }),
+        animate('1000ms', style({ opacity: 1 })),
+      ]),
+      transition(':leave', [
+        animate('1000ms', style({ opacity: 0 }))
+      ])
+    ]),
+  ],
   templateUrl: "./answer.component.html",
   styleUrls: ["./answer.component.css"],
 })
 export class AnswerComponent implements OnInit, OnDestroy {
-  // enteredAnswer = "";
   question: any = {
-    id: '',
-    title: '',
-    answers: []
+    id: "",
+    title: "",
+    answers: [],
   };
   isLoading = false;
   // form: FormGroup;
@@ -25,6 +38,7 @@ export class AnswerComponent implements OnInit, OnDestroy {
   private id: string;
   private title: string;
   private authStatusSub: Subscription;
+  currentDate = new Date();
 
   constructor(
     public questionsService: QuestionsService,
@@ -44,21 +58,21 @@ export class AnswerComponent implements OnInit, OnDestroy {
   getQuestion(): void {
     this.route.paramMap.subscribe((paramMap: ParamMap) => {
       if (paramMap.has("id")) {
-        this.mode = 'edit';
+        this.mode = "edit";
         this.id = paramMap.get("id");
-        this.questionsService.getQuestion(this.id).subscribe(postData => {
+        this.questionsService.getQuestion(this.id).subscribe((postData) => {
           this.question = {
             id: postData.question._id,
             title: postData.question.title,
-            answers: postData.question.answers
+            answers: postData.question.answers,
           };
         });
-      } else { 
-        this.mode = 'create';
+      } else {
+        this.mode = "create";
         this.id = null;
       }
-    })
-    }
+    });
+  }
 
   // onSaveQuestion() {
   //   if (this.form.invalid) {

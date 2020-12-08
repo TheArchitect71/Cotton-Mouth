@@ -7,16 +7,17 @@
   }
 }
 mat-card {
-  text-align: center;
-}
-mat-card-subtitle {
   text-align: right;
+  margin: 1em;
 }
 mat-card-content {
   text-align: left;
 }
-.question {
+.question_container {
   margin-bottom: 3em;
+}
+.mat-form-field {
+  display: block;
 }
 .answer {
   margin: 10px;
@@ -26,4 +27,13 @@ mat-card-content {
   flex-wrap: wrap;
   justify-content: center;
   padding-top: 15px;
+}
+button {
+  margin: 1em;
+}
+[mat-mini-fab] {
+  position: absolute;
+  bottom: 74px;
+  right: -10px;
+  z-index: 10;
 }
