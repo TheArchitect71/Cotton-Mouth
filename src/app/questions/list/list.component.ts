@@ -3,6 +3,7 @@ import { QuestionsService } from "../questions.service";
 import { PageEvent } from "@angular/material/paginator";
 import { Subscription } from "rxjs";
 import { AuthService } from "src/app/authentication/auth.service";
+import { ActivatedRoute, ParamMap } from "@angular/router";
 import { Question } from "../question.model";
 
 @Component({
@@ -16,6 +17,7 @@ export class ListComponent implements OnInit, OnDestroy {
   isLoading = false;
   totalQuestions = 0;
   questionsPerPage = 2;
+  journeyPath = "";
   currentPage = 1;
   pageSizeOptions = [1, 2, 5, 10];
   userIsAuthenticated = false;
@@ -25,10 +27,23 @@ export class ListComponent implements OnInit, OnDestroy {
 
   constructor(
     private questionsService: QuestionsService,
+    public route: ActivatedRoute,
     private authService: AuthService
   ) {}
 
   ngOnInit(): void {
+    // this.getQuestions();
+    this.getQuestionsByJourney();
+    this.userIsAuthenticated = this.authService.getIsAuth();
+    this.authStatusSub = this.authService
+      .getAuthStatusListener()
+      .subscribe((isAuthenticated) => {
+        this.userIsAuthenticated = isAuthenticated;
+        this.userId = this.authService.getUserId();
+      });
+  }
+
+  getQuestions() {
     this.questionsService.getQuestions(this.questionsPerPage, this.currentPage);
     this.userId = this.authService.getUserId();
     this.questionsSub = this.questionsService
@@ -40,14 +55,24 @@ export class ListComponent implements OnInit, OnDestroy {
           this.questions = questionData.questions;
         }
       );
-    this.userIsAuthenticated = this.authService.getIsAuth();
-    this.authStatusSub = this.authService
-      .getAuthStatusListener()
-      .subscribe((isAuthenticated) => {
-        this.userIsAuthenticated = isAuthenticated;
-        this.userId = this.authService.getUserId();
-      });
   }
+
+  getQuestionsByJourney() {
+    this.route.paramMap.subscribe((paramMap: ParamMap) => {
+      this.journeyPath = paramMap.get('journeyPath');
+      this.questionsService.getQuestionByJourney(this.journeyPath);
+      this.questionsSub = this.questionsService
+        .getQuestionUpdateListener()
+        .subscribe(
+          (questionData: { questions: Question[]; questionCount: number }) => {
+            this.isLoading = false;
+            this.totalQuestions = questionData.questionCount;
+            this.questions = questionData.questions;
+          }
+        );
+    })
+        console.log(this.route)
+    }
 
   onChangedPage(pageData: PageEvent) {
     this.isLoading = true;
