@@ -6,12 +6,6 @@
   margin-left: 2em;
   font-size: xx-small;
 }
-.mat-card-image:first-child {
-  margin-top: 1em;
-  border-radius: 50%;
-  height: 15em;
-  width: 15em;
-}
 @media (min-width: 1000px) {
   section {
     display: block;

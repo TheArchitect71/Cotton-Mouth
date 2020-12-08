@@ -1,12 +1,18 @@
 <section>
-  <mat-card *ngFor="let item of navigationList" class="example-card" routerLink="/{{ item.route }}" routerLinkActive="active">
-    <mat-card-title>
-      {{ item.title }}
-    </mat-card-title>
-    <mat-card-content>
-      <p>
-        {{ item.content }}
-      </p>
-    </mat-card-content>
-  </mat-card>
+    <mat-card
+      *ngFor="let journey of navigationList"
+      class="example-card"
+      routerLink="/{{ journey.route }}"
+      routerLinkActive="active"
+    >
+      <mat-card-title>
+        {{ journey.title }}
+      </mat-card-title>
+      <mat-card-content>
+        <p>
+          {{ journey.content }}
+        </p>
+      </mat-card-content>
+    </mat-card>
 </section>
+
