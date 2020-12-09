@@ -15,7 +15,7 @@ export class AuthService {
   private isAuthenticated = false;
   private token: string;
   private tokenTimer: any;
-  private userId: string;
+  private userInfo = {};
   private authStatusListener = new Subject<boolean>();
 
   constructor(private http: HttpClient, private router: Router) {}
@@ -28,8 +28,8 @@ export class AuthService {
     return this.isAuthenticated;
   }
 
-  getUserId() {
-    return this.userId;
+  getUserInfo() {
+    return this.userInfo;
   }
 
   getAuthStatusListener() {
@@ -51,7 +51,7 @@ export class AuthService {
   login(email: string, password: string) {
     const authData: AuthData = { email: email, password: password };
     this.http
-      .post<{ auth_token: string; name: string }>(
+      .post<{ auth_token: string; info: {} }>(
         BACKEND_URL + '/login',
         authData
       )
@@ -61,10 +61,9 @@ export class AuthService {
           this.token = token;
           if (token) {
             this.isAuthenticated = true;
-            this.userId = response.name;
+            this.userInfo = response.info;
             this.authStatusListener.next(true);
-            
-            this.saveAuthData(token, this.userId);
+            this.saveAuthData(token, this.userInfo);
             this.router.navigate(['/']);
           }
         },
@@ -81,7 +80,7 @@ export class AuthService {
     }
       this.token = authInformation.token;
       this.isAuthenticated = true;
-      this.userId = authInformation.userId;
+      this.userInfo = authInformation.userInfo;
       this.authStatusListener.next(true);
   }
 
@@ -89,31 +88,31 @@ export class AuthService {
     this.token = null;
     this.isAuthenticated = false;
     this.authStatusListener.next(false);
-    this.userId = null;
+    this.userInfo = null;
     clearTimeout(this.tokenTimer);
     this.clearAuthData();
     this.router.navigate(['/']);
   }
 
-  private saveAuthData(token: string, userId: string) {
+  private saveAuthData(token: string, userInfo: {}) {
     localStorage.setItem('token', token);
-    localStorage.setItem('userId', userId);
+    localStorage.setItem('userInfo', JSON.stringify(userInfo));
   }
 
   private clearAuthData() {
     localStorage.removeItem('token');
-    localStorage.removeItem('userId');
+    localStorage.removeItem('userInfo');
   }
 
   private getAuthData() {
     const token = localStorage.getItem('token');
-    const userId = localStorage.getItem('userId');
+    const userInfo = localStorage.getItem('userInfo');
     if (!token) {
       return;
     }
     return {
       token: token,
-      userId: userId
+      userInfo: JSON.parse(userInfo)
     };
   }
 }

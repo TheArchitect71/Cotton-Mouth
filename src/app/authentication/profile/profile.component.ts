@@ -9,7 +9,7 @@ import { AuthService } from "../auth.service";
 })
 export class ProfileComponent implements OnInit, OnDestroy {
   isLoading = false;
-  user: string
+  user: any;
   private authStatusSub: Subscription;
 
   constructor(public authService: AuthService) {}
@@ -17,10 +17,10 @@ export class ProfileComponent implements OnInit, OnDestroy {
   ngOnInit(): void {
     this.authStatusSub = this.authService
       .getAuthStatusListener()
-      .subscribe((authStatus) => {
+      .subscribe( authStatus => {
         this.isLoading = false;
       });
-      this.user = this.authService.getUserId()
+      this.user = this.authService.getUserInfo();
   }
 
   onLogout() {

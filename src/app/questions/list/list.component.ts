@@ -21,7 +21,7 @@ export class ListComponent implements OnInit, OnDestroy {
   currentPage = 1;
   pageSizeOptions = [1, 2, 5, 10];
   userIsAuthenticated = false;
-  userId: {};
+  userInfo: {};
   private questionsSub: Subscription;
   private authStatusSub: Subscription;
 
@@ -39,13 +39,13 @@ export class ListComponent implements OnInit, OnDestroy {
       .getAuthStatusListener()
       .subscribe((isAuthenticated) => {
         this.userIsAuthenticated = isAuthenticated;
-        this.userId = this.authService.getUserId();
+        this.userInfo = this.authService.getUserInfo();
       });
   }
 
   getQuestions() {
     this.questionsService.getQuestions(this.questionsPerPage, this.currentPage);
-    this.userId = this.authService.getUserId();
+    this.userInfo = this.authService.getUserInfo();
     this.questionsSub = this.questionsService
       .getQuestionUpdateListener()
       .subscribe(
