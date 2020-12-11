@@ -21,7 +21,7 @@ const routes: Routes = [
   { path: 'contact', component: ContactComponent},
   { path: 'auth', loadChildren: () => import('./authentication/auth.module').then(m => m.AuthModule)},
   { path: 'questions/:journeyPath', component: ListComponent},
-  { path: 'answer/:id', component: AnswerComponent}
+  { path: 'answer/:id', component: AnswerComponent, canActivate: [AuthGuard]}
 ];
 
 @NgModule({
