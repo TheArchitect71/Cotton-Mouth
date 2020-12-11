@@ -1,6 +1,6 @@
 import { Injectable } from "@angular/core";
 import { Observable, of, Subject } from "rxjs";
-import { HttpClient, HttpHeaders } from "@angular/common/http";
+import { HttpClient, HttpHeaders, HttpParams } from "@angular/common/http";
 import { catchError, map, subscribeOn, tap } from "rxjs/operators";
 import { Router } from "@angular/router";
 
@@ -10,19 +10,20 @@ import { environment } from "../../environments/environment";
 
 const BACKEND_URL = environment.apiUrl + "/api/v1/questions";
 
+const httpOptions = {
+  headers: new HttpHeaders({ "Content-Type": "application/json" }),
+};
+
 @Injectable({
   providedIn: "root",
 })
 export class QuestionsService {
   private questions: Question[] = [];
+  private journeyPath: string;
   private questionsUpdated = new Subject<{
     questions: Question[];
     questionCount: number;
   }>();
-
-  httpOptions = {
-    headers: new HttpHeaders({ "Content-Type": "application/json" }),
-  };
 
   constructor(private http: HttpClient, private router: Router) {}
 
@@ -57,6 +58,7 @@ export class QuestionsService {
 
   getQuestionByJourney(journeyPath: string) {
     const queryParams = `/journeys/${journeyPath}`;
+    this.journeyPath = journeyPath;
     this.http
       .get<{ message: string; titles: any; maxQuestions: number }>(
         BACKEND_URL + queryParams
@@ -94,13 +96,21 @@ export class QuestionsService {
     }>(`${BACKEND_URL}/id/${id}`, { responseType: "json" });
   }
 
-  addQuestion(title: string, content: string) {
-    const questionData = new FormData();
-    questionData.append("title", title);
+  addAnswer(questionId: string, answer: string) {
+    const body = new HttpParams()
+      .set(`question_id`, questionId)
+      .set(`answer`, answer);
+    const headers = new HttpHeaders({
+      "Content-Type": "application/x-www-form-urlencoded",
+    });
     this.http
-      .post<{ message: string; question: Question }>(BACKEND_URL, questionData)
+      .post<{ message: string; question: Question }>(
+        `${BACKEND_URL}/answer`,
+        body,
+        { headers }
+      )
       .subscribe((responseData) => {
-        this.router.navigate(["/"]);
+        this.router.navigate([`/questions/${this.journeyPath}`]);
       });
   }
 

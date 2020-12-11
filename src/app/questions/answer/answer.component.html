@@ -5,28 +5,30 @@
 
   <mat-card>
     <button
-    @myInsertRemoveTrigger
-    *ngIf="answer.value.length > 0"
-    mat-mini-fab
-    color="primary"
-    aria-label="Example icon button with a menu icon"
-  >
-    <span class="material-icons"> save </span>
-  </button>
+      @myInsertRemoveTrigger
+      *ngIf="answer.value.length > 0"
+      mat-mini-fab
+      color="primary"
+      aria-label="save button"
+      (click)="onSaveAnswer()"
+    >
+      <span class="material-icons"> save </span>
+    </button>
     <mat-form-field appearance="outline">
-      <mat-label>{{ currentDate | date: "mediumDate" }}</mat-label>
-      <textarea
-        matInput
-        #answer
-        cdkTextareaAutosize
-        #autosize="cdkTextareaAutosize"
-        cdkAutosizeMinRows="1"
-        cdkAutosizeMaxRows="10"
-        maxlength="3000"
-        placeholder="as you were saying..."
-      ></textarea>
-      <mat-hint align="end">{{ answer.value.length }} / 3000</mat-hint>
-    </mat-form-field>
+        <mat-label>{{ currentDate | date: "mediumDate" }}</mat-label>
+        <textarea
+          matInput
+          #answer
+          cdkTextareaAutosize
+          #autosize="cdkTextareaAutosize"
+          cdkAutosizeMinRows="1"
+          cdkAutosizeMaxRows="10"
+          maxlength="3000"
+          placeholder="as you were saying..."
+          [formControl]="writtenAnswer"
+        ></textarea>
+        <mat-hint align="end">{{ answer.value.length }} / 3000</mat-hint>
+      </mat-form-field>
   </mat-card>
 
   <div class="answer_container">
@@ -38,7 +40,9 @@
         >{{ answer.date | date: mediumDate }}
       </mat-card-subtitle>
       <mat-card-content>
-        {{ answer.answer }}
+        <p>
+          {{ answer.answer }}
+        </p>
       </mat-card-content>
     </mat-card>
   </div>

@@ -1,8 +1,7 @@
 import { Component, OnDestroy, OnInit } from "@angular/core";
-import { FormGroup, FormControl, Validators } from "@angular/forms";
-import { formatDate } from "@angular/common";
+import { FormControl } from "@angular/forms";
 
-import { trigger, transition, animate, style } from '@angular/animations';
+import { trigger, transition, animate, style } from "@angular/animations";
 import { ActivatedRoute, ParamMap, Params } from "@angular/router";
 import { Subscription } from "rxjs";
 
@@ -13,14 +12,12 @@ import { AuthService } from "src/app/authentication/auth.service";
 @Component({
   selector: "app-answer",
   animations: [
-    trigger('myInsertRemoveTrigger', [
-      transition(':enter', [
+    trigger("myInsertRemoveTrigger", [
+      transition(":enter", [
         style({ opacity: 0 }),
-        animate('1000ms', style({ opacity: 1 })),
+        animate("1000ms", style({ opacity: 1 })),
       ]),
-      transition(':leave', [
-        animate('1000ms', style({ opacity: 0 }))
-      ])
+      transition(":leave", [animate("1000ms", style({ opacity: 0 }))]),
     ]),
   ],
   templateUrl: "./answer.component.html",
@@ -33,10 +30,9 @@ export class AnswerComponent implements OnInit, OnDestroy {
     answers: [],
   };
   isLoading = false;
-  // form: FormGroup;
+  writtenAnswer = new FormControl("");
   private mode = "create";
   private id: string;
-  private title: string;
   private authStatusSub: Subscription;
   currentDate = new Date();
 
@@ -58,7 +54,6 @@ export class AnswerComponent implements OnInit, OnDestroy {
   getQuestion(): void {
     this.route.paramMap.subscribe((paramMap: ParamMap) => {
       if (paramMap.has("id")) {
-        this.mode = "edit";
         this.id = paramMap.get("id");
         this.questionsService.getQuestion(this.id).subscribe((postData) => {
           this.question = {
@@ -74,21 +69,19 @@ export class AnswerComponent implements OnInit, OnDestroy {
     });
   }
 
-  // onSaveQuestion() {
-  //   if (this.form.invalid) {
-  //     return;
-  //   }
-  //   this.isLoading = true;
-  //   if (this.mode === "create") {
-  //     this.questionsService.addQuestion(
-  //       this.form.value.answer,
-  //       this.form.value.content
-  //     );
-  //   } else {
-  //     this.questionsService.updateQuestion(this.id, this.form.value.answer);
-  //   }
-  //   this.form.reset();
-  // }
+  onSaveAnswer() {
+    if (this.writtenAnswer.value.trim() == '') {
+      return;
+    }
+    this.isLoading = true;
+    if (this.mode === "create") {
+      const trimmedAnswer = this.writtenAnswer.value.trim()
+      this.questionsService.addAnswer(this.id, trimmedAnswer);
+    } else {
+      this.questionsService.updateQuestion(this.id, this.writtenAnswer.value);
+    }
+    this.writtenAnswer.reset();
+  }
 
   ngOnDestroy() {
     this.authStatusSub.unsubscribe();
