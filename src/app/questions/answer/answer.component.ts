@@ -83,6 +83,15 @@ export class AnswerComponent implements OnInit, OnDestroy {
     this.writtenAnswer.reset();
   }
 
+  onDelete(answerId: string, questionId: string) {
+    this.isLoading = true;
+    this.questionsService.deleteAnswer(answerId, questionId).subscribe(() => {
+      this.getQuestion();
+    }, () => {
+      this.isLoading = false;
+    });
+  }
+
   ngOnDestroy() {
     this.authStatusSub.unsubscribe();
   }

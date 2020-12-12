@@ -126,8 +126,17 @@ export class QuestionsService {
     });
   }
 
-  deleteQuestion(questionId: string) {
-    return this.http.delete(BACKEND_URL + questionId);
+  deleteAnswer(answerId: string, questionId: string) {
+    const body = new HttpParams()
+    .set(`question_id`, questionId)
+    .set(`answer_id`, answerId);
+    const options = {
+      headers: new HttpHeaders({
+        "Content-Type": "application/x-www-form-urlencoded",
+      }),
+      body: body
+    };
+    return this.http.delete(`${BACKEND_URL}/answer`, options);
   }
 
   /**
