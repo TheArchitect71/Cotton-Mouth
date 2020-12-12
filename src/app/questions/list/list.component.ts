@@ -71,7 +71,6 @@ export class ListComponent implements OnInit, OnDestroy {
           }
         );
     })
-        console.log(this.route)
     }
 
   onChangedPage(pageData: PageEvent) {
