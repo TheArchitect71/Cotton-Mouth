@@ -52,9 +52,11 @@ export class AppComponent {
       content: `To Be Authentic. To Surrender the Outcome. To Do Uncomfortable Work.`,
     },
     {
+      route: "/contact",
       title: `Contact Us`,
     },
     {
+      route: "/auth/login",
       title: "Log In",
     },
   ];
