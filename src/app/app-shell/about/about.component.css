@@ -1,37 +1,35 @@
-section {
-  margin-left: 1em;
-  margin-right: 1em;
-}
 @media (min-width: 1000px) {
   section {
     display: block;
     margin-left: auto;
     margin-right: auto;
-    width: 45%;
+    width: 40%;
   }
 }
-.intro {
-  display: flex;
-  position: relative;
+section {
+  margin-bottom: 1em;
+}
+.intro_h1 {
+  font-size: 3rem;
+  line-height: 1;
   background: -webkit-linear-gradient(-120deg, #c40707, #bf5700);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  padding-bottom: 5px;
+}
+.mat-card {
+  margin: 1em;
   text-align: center;
 }
-.text-color {
-  background: -webkit-linear-gradient(120deg, #ffe259, #ffa751);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  text-align: center;
+.mat-card-title {
+  font-size: 23px;
+  font-weight: 400;
+  line-height: 1.2;
 }
-mat-card {
-  margin-bottom: 1em;
+p {
+  text-align: left;
 }
-.mat-card-image:first-child {
-  margin-top: 1em;
-  border-radius: 50%;
-  height: 15em;
-  width: 15em;
+.mat-card-actions {
+  display: flex;
 }

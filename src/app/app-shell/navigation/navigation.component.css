@@ -1,0 +1,16 @@
+.example-card {
+  margin: auto;
+  margin-bottom: 1em;
+  margin-bottom: 1em;
+  margin-right: 2em;
+  margin-left: 2em;
+  font-size: xx-small;
+}
+@media (min-width: 1000px) {
+  section {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 45%;
+  }
+}

@@ -9,9 +9,9 @@
   padding: 20px;
 }
 img {
-  max-width: 100%;
+  max-width: 6em;
   max-height: 100%;
 }
-.background-sky {
-  background-color: #f9d700;
+.mat-drawer-container {
+  background: #bf5700;
 }

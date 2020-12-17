@@ -10,7 +10,7 @@
       </mat-list-option>
     </mat-selection-list>
   </mat-sidenav>
-  <mat-sidenav-content class="background-sky">
+  <mat-sidenav-content>
     <header>
       <mat-grid-list cols="3" rowHeight="7em">
         <mat-grid-tile>
@@ -18,14 +18,14 @@
             mat-raised-button
             (click)="sidenav.toggle()"
             routerLinkActive="router-link-active"
-            color="primary"
+            color="secondary"
           >
             <span class="material-icons"> menu </span>
           </button>
         </mat-grid-tile>
         <mat-grid-tile
           ><img
-            src="/assets/existential thinker logo colored shrinked.png"
+            src="/assets/existential thinker logo orange.png"
             routerLink=""
             routerLinkActive="active"
             alt="existential thinker logo"
@@ -37,7 +37,7 @@
             mat-raised-button
             [routerLink]="['/auth/login']"
             routerLinkActive="router-link-active"
-            color="primary"
+            color="secondary"
           >
             <span class="material-icons"> person </span>
           </button>
@@ -46,7 +46,7 @@
             mat-raised-button
             [routerLink]="['/auth/profile']"
             routerLinkActive="router-link-active"
-            color="primary"
+            color="secondary"
           >
             <span class="material-icons"> person </span>
           </button>
