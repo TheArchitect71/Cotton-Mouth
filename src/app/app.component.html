@@ -1,5 +1,11 @@
 <mat-sidenav-container class="example-container">
-  <mat-sidenav #sidenav mode="side" [(opened)]="opened" class="example-sidenav">
+  <mat-sidenav
+    #sidenav
+    [mode]="mobileQuery.matches ? 'over' : 'side'"
+    [fixedInViewport]="mobileQuery.matches"
+    [(opened)]="opened"
+    class="example-sidenav"
+  >
     <mat-selection-list [multiple]="false">
       <mat-list-option
         routerLink="/{{ item.route }}"
