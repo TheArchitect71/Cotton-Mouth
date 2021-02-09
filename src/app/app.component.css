@@ -12,6 +12,7 @@
 img {
   max-width: 6em;
   max-height: 100%;
+  content: url("/assets/existential thinker logo orange.png");
 }
 .mat-drawer-container {
   background: #bf5700;

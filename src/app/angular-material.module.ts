@@ -62,6 +62,7 @@ import {MatTreeModule} from '@angular/material/tree';
     MatExpansionModule,
     MatPaginatorModule,
     MatFormFieldModule,
+    ScrollingModule
   ]
 })
 export class AngularMaterialModule {}
