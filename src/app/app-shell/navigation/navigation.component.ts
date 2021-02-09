@@ -10,16 +10,15 @@ export class NavigationComponent implements OnInit {
 
   navigationList = [
     {
-      id: 1,
-      route: "/questions/?journeys=biography",
-      title: `The Story`,
-      content: `If a Story is in You. It has to Come Out`,
-    },
-    {
       id: 2,
       route: `/questions/?journeys=destination`,
       title: `Destination Journey`,
       content: `Finding your Life's Purpose or True Calling`,
+    },
+    {
+      route: `/questions/?journeys=humanitarian`,
+      title: `Humanitarian Journey`,
+      content: `Make a Difference in the World`
     },
     {
       id: 3,
