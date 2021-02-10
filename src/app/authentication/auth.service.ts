@@ -15,6 +15,7 @@ export class AuthService {
   private isAuthenticated = false;
   private token: string;
   private tokenTimer: any;
+  // private userId: string;
   private userInfo = {};
   private authStatusListener = new Subject<boolean>();
 
@@ -112,7 +113,7 @@ export class AuthService {
     }
     return {
       token: token,
-      userInfo: JSON.parse(userInfo)
+      userInfo: JSON.parse(userInfo),
     };
   }
 }

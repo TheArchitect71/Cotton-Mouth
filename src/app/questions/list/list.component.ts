@@ -1,25 +1,27 @@
-import { Component, OnDestroy, OnInit } from "@angular/core";
+import {
+  Component,
+  OnDestroy,
+  OnInit,
+} from "@angular/core";
 import { QuestionsService } from "../questions.service";
-import { PageEvent } from "@angular/material/paginator";
 import { Subscription } from "rxjs";
 import { AuthService } from "src/app/authentication/auth.service";
 import { ActivatedRoute, ParamMap } from "@angular/router";
 import { Question } from "../question.model";
-
 @Component({
   selector: "app-list",
   templateUrl: "./list.component.html",
   styleUrls: ["./list.component.css"],
 })
 export class ListComponent implements OnInit, OnDestroy {
-  panelOpenState = false;
+  pageSizeOptions = [5, 7, 11];
+  journeyPath = "";
+  totalQuestions = 31;
   questions = [];
   isLoading = false;
-  totalQuestions = 0;
-  questionsPerPage = 2;
-  journeyPath = "";
+  questionsPerPage = 5;
   currentPage = 1;
-  pageSizeOptions = [1, 2, 5, 10];
+  lastId;
   userIsAuthenticated = false;
   userInfo: {};
   private questionsSub: Subscription;
@@ -32,8 +34,9 @@ export class ListComponent implements OnInit, OnDestroy {
   ) {}
 
   ngOnInit(): void {
-    // this.getQuestions();
+    this.isLoading = true;
     this.getQuestionsByJourney();
+    this.userInfo = this.authService.getUserInfo();
     this.userIsAuthenticated = this.authService.getIsAuth();
     this.authStatusSub = this.authService
       .getAuthStatusListener()
@@ -43,41 +46,32 @@ export class ListComponent implements OnInit, OnDestroy {
       });
   }
 
-  getQuestions() {
-    this.questionsService.getQuestions(this.questionsPerPage, this.currentPage);
-    this.userInfo = this.authService.getUserInfo();
-    this.questionsSub = this.questionsService
-      .getQuestionUpdateListener()
-      .subscribe(
-        (questionData: { questions: Question[]; questionCount: number }) => {
-          this.isLoading = false;
-          this.totalQuestions = questionData.questionCount;
-          this.questions = questionData.questions;
-        }
-      );
-  }
-
   getQuestionsByJourney() {
     this.route.paramMap.subscribe((paramMap: ParamMap) => {
-      this.journeyPath = paramMap.get('journeyPath');
-      this.questionsService.getQuestionByJourney(this.journeyPath);
+      this.journeyPath = paramMap.get("journeyPath");
+      this.questionsService.getQuestionByJourney(
+        this.journeyPath,
+        this.questionsPerPage,
+        this.lastId
+      );
       this.questionsSub = this.questionsService
         .getQuestionUpdateListener()
-        .subscribe(
-          (questionData: { questions: Question[]; questionCount: number }) => {
-            this.isLoading = false;
-            this.totalQuestions = questionData.questionCount;
-            this.questions = questionData.questions;
-          }
-        );
-    })
-    }
+        .subscribe((questionData: { questions: Question[]; last_id: any }) => {
+          this.isLoading = false;
+          this.questions = questionData.questions;
+          this.lastId = questionData.last_id;
+        });
+    });
+  }
 
-  onChangedPage(pageData: PageEvent) {
+  onChangedPage() {
     this.isLoading = true;
-    this.currentPage = pageData.pageIndex + 1;
-    this.questionsPerPage = pageData.pageSize;
-    this.questionsService.getQuestions(this.questionsPerPage, this.currentPage);
+    this.questionsService.getQuestionByJourney(
+      this.journeyPath,
+      this.questionsPerPage,
+      this.lastId
+    );
+    console.log(this.lastId);
   }
 
   ngOnDestroy() {

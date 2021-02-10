@@ -22,13 +22,13 @@ export class QuestionsService {
   private journeyPath: string;
   private questionsUpdated = new Subject<{
     questions: Question[];
-    questionCount: number;
+    last_id: any;
   }>();
 
   constructor(private http: HttpClient, private router: Router) {}
 
-  getQuestions(questionsPerPage: number, currentPage: number) {
-    const queryParams = `?pagesize=${questionsPerPage}&page=${currentPage}`;
+  getQuestions(questionsPerPage: number) {
+    const queryParams = `?pagesize=${questionsPerPage}`;
     this.http
       .get<{ message: string; questions: any; maxQuestions: number }>(
         BACKEND_URL + queryParams
@@ -40,7 +40,6 @@ export class QuestionsService {
               return {
                 title: question.title,
                 id: question._id,
-                content: question.creator,
               };
             }),
             maxQuestions: questionData.maxQuestions,
@@ -51,29 +50,29 @@ export class QuestionsService {
         this.questions = transformedQuestionData.questions;
         this.questionsUpdated.next({
           questions: [...this.questions],
-          questionCount: transformedQuestionData.maxQuestions,
+          last_id: transformedQuestionData
         });
       });
   }
 
-  getQuestionByJourney(journeyPath: string) {
-    const queryParams = `/journeys/${journeyPath}`;
+  getQuestionByJourney(journeyPath: string, questionsPerPage: number, lastId: any) {
+    const queryParams = `journeys/${journeyPath}`;
+    const queryParams2 = `${queryParams}&pageSize=${questionsPerPage}&lastId=${lastId}`;
     this.journeyPath = journeyPath;
     this.http
-      .get<{ message: string; titles: any; maxQuestions: number }>(
-        BACKEND_URL + queryParams
+      .get<{ message: string; titles: any; last_id: any}>(
+        `${BACKEND_URL}/${queryParams2}`
       )
       .pipe(
-        map((questionData) => {
+        map((journeyData) => {
           return {
-            questions: questionData.titles.map((question) => {
+            questions: journeyData.titles.map((question) => {
               return {
                 title: question.title,
                 id: question._id,
-                content: question.creator,
               };
             }),
-            maxQuestions: questionData.maxQuestions,
+            last_id: journeyData.last_id
           };
         })
       )
@@ -81,7 +80,7 @@ export class QuestionsService {
         this.questions = transformedQuestionData.questions;
         this.questionsUpdated.next({
           questions: [...this.questions],
-          questionCount: transformedQuestionData.maxQuestions,
+          last_id: transformedQuestionData.last_id
         });
       });
   }
@@ -128,13 +127,13 @@ export class QuestionsService {
 
   deleteAnswer(answerId: string, questionId: string) {
     const body = new HttpParams()
-    .set(`question_id`, questionId)
-    .set(`answer_id`, answerId);
+      .set(`question_id`, questionId)
+      .set(`answer_id`, answerId);
     const options = {
       headers: new HttpHeaders({
         "Content-Type": "application/x-www-form-urlencoded",
       }),
-      body: body
+      body: body,
     };
     return this.http.delete(`${BACKEND_URL}/answer`, options);
   }
