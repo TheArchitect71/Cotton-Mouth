@@ -14,7 +14,6 @@ import { Question } from "../question.model";
   styleUrls: ["./list.component.css"],
 })
 export class ListComponent implements OnInit, OnDestroy {
-  pageSizeOptions = [5, 7, 11];
   journeyPath = "";
   totalQuestions = 31;
   questions = [];
@@ -28,7 +27,7 @@ export class ListComponent implements OnInit, OnDestroy {
   private authStatusSub: Subscription;
 
   constructor(
-    private questionsService: QuestionsService,
+    public questionsService: QuestionsService,
     public route: ActivatedRoute,
     private authService: AuthService
   ) {}
@@ -60,6 +59,7 @@ export class ListComponent implements OnInit, OnDestroy {
           this.isLoading = false;
           this.questions = questionData.questions;
           this.lastId = questionData.last_id;
+          console.log(this.questions)
         });
     });
   }
