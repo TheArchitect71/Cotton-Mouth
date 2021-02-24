@@ -116,4 +116,12 @@ export class AuthService {
       userInfo: JSON.parse(userInfo),
     };
   }
+
+  resetPassword(email: string) {
+    this.token = null;
+    this.isAuthenticated = false;
+    this.authStatusListener.next(false);
+    this.userInfo = null;
+    console.log("Hey There beautiful!")
+  }
 }

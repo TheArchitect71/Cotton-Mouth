@@ -28,3 +28,6 @@ mat-card-actions {
   justify-content: flex-end;
   margin-bottom: 0%;
 }
+p {
+  text-align: center;
+}
